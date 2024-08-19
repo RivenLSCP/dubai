@@ -205,7 +205,6 @@ web3==6.20.2
 webdriver-manager==4.0.2
 websocket-client==1.8.0
 websockets==12.0
-wheel @ file:///opt/homebrew/Cellar/python%403.12/3.12.4/libexec/wheel-0.43.0-py3-none-any.whl#sha256=ff23205a590f2b902a2a21151019e96b93ab4a1409d7c9748b6bd210f4c0f44d
 wsproto==1.2.0
 XlsxWriter==3.2.0
 yarl==1.9.4
