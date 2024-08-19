@@ -1,0 +1,2900 @@
+{
+    "Dubai Neighborhoods": [
+        {
+            "Area": "Palm Jumeirah",
+            "Location & Accessibility": {
+                "Proximity to Key Areas": "20-30 min to key areas (+2)",
+                "Traffic Conditions": "Congested (-1)"
+            },
+            "Housing Options & Costs": {
+                "Available Housing Types": "Luxury apts, villas (+2)",
+                "Average Rent (EUR/month)": 5700,
+                "Cost of Living Index": 90
+            },
+            "Amenities & Facilities": {
+                "Parks and Recreation": "Boardwalk, beach clubs (+1)",
+                "Healthcare Facilities": "Nearby hospitals (+1)"
+            },
+            "Community & Lifestyle": {
+                "Demographics": "Expat families, professionals (+1)",
+                "Family-Friendliness": "Luxury, family activities (+1)",
+                "Safety Rating": 95
+            },
+            "Environment & Weather": {
+                "Green Spaces": "Limited, landscaped (0)",
+                "Noise Levels": "Quiet, some construction (0)",
+                "Air Quality Index": 50
+            },
+            "Risk Factors": {
+                "Risk of Sandstorm": "Moderate (-1)",
+                "Risk of Apartment Flooding": "Low (+1)"
+            },
+            "Leisure & Entertainment": {
+                "Sports Facilities": "Water sports, gyms (+2)",
+                "Beach Access": "Private/public beaches (+3)"
+            },
+            "Total Score": 12
+        },
+        {
+            "Area": "Academic City",
+            "Location & Accessibility": {
+                "Proximity to Key Areas": "30-40 min to key areas (-1)",
+                "Traffic Conditions": "Light traffic (+1)"
+            },
+            "Housing Options & Costs": {
+                "Available Housing Types": "Student housing, mid-range apartments (+1)",
+                "Average Rent (EUR/month)": 1500,
+                "Cost of Living Index": 60
+            },
+            "Amenities & Facilities": {
+                "Parks and Recreation": "Limited green spaces (0)",
+                "Healthcare Facilities": "Few clinics nearby (0)"
+            },
+            "Community & Lifestyle": {
+                "Demographics": "Students, academic professionals (+1)",
+                "Family-Friendliness": "Not highly family-oriented (-1)",
+                "Safety Rating": 85
+            },
+            "Environment & Weather": {
+                "Green Spaces": "Limited, campus-oriented (0)",
+                "Noise Levels": "Quiet except during events (+1)",
+                "Air Quality Index": 55
+            },
+            "Risk Factors": {
+                "Risk of Sandstorm": "Moderate (-1)",
+                "Risk of Apartment Flooding": "Very low (+1)"
+            },
+            "Leisure & Entertainment": {
+                "Sports Facilities": "Campus gyms, limited sports facilities (0)",
+                "Beach Access": "None (-3)"
+            },
+            "Total Score": 3
+        },
+        {
+            "Area": "Al Awir",
+            "Location & Accessibility": {
+                "Proximity to Key Areas": "40+ min to key areas (-2)",
+                "Traffic Conditions": "Light traffic (+1)"
+            },
+            "Housing Options & Costs": {
+                "Available Housing Types": "Villas, affordable housing (+1)",
+                "Average Rent (EUR/month)": 1200,
+                "Cost of Living Index": 50
+            },
+            "Amenities & Facilities": {
+                "Parks and Recreation": "Limited parks, desert landscape (0)",
+                "Healthcare Facilities": "Few clinics, distant hospitals (-1)"
+            },
+            "Community & Lifestyle": {
+                "Demographics": "Local families, workers (+1)",
+                "Family-Friendliness": "Family-friendly but isolated (-1)",
+                "Safety Rating": 90
+            },
+            "Environment & Weather": {
+                "Green Spaces": "Desert landscape, few green areas (-1)",
+                "Noise Levels": "Quiet (+1)",
+                "Air Quality Index": 60
+            },
+            "Risk Factors": {
+                "Risk of Sandstorm": "High (-2)",
+                "Risk of Apartment Flooding": "Very low (+1)"
+            },
+            "Leisure & Entertainment": {
+                "Sports Facilities": "Limited, local sports (0)",
+                "Beach Access": "None (-3)"
+            },
+            "Total Score": -2
+        },
+        {
+            "Area": "Al Furjan",
+            "Location & Accessibility": {
+                "Proximity to Key Areas": "20-30 min to key areas (+2)",
+                "Traffic Conditions": "Moderate traffic (0)"
+            },
+            "Housing Options & Costs": {
+                "Available Housing Types": "Townhouses, villas, apartments (+2)",
+                "Average Rent (EUR/month)": 3000,
+                "Cost of Living Index": 70
+            },
+            "Amenities & Facilities": {
+                "Parks and Recreation": "Community parks, sports facilities (+1)",
+                "Healthcare Facilities": "Nearby clinics and hospitals (+1)"
+            },
+            "Community & Lifestyle": {
+                "Demographics": "Mixed expats, families (+1)",
+                "Family-Friendliness": "Family-oriented, community vibe (+2)",
+                "Safety Rating": 90
+            },
+            "Environment & Weather": {
+                "Green Spaces": "Well-maintained community parks (+1)",
+                "Noise Levels": "Quiet, residential area (+1)",
+                "Air Quality Index": 55
+            },
+            "Risk Factors": {
+                "Risk of Sandstorm": "Moderate (-1)",
+                "Risk of Apartment Flooding": "Low (+1)"
+            },
+            "Leisure & Entertainment": {
+                "Sports Facilities": "Community sports facilities (+1)",
+                "Beach Access": "Distant (-2)"
+            },
+            "Total Score": 10
+        },
+        {
+            "Area": "Al Garhoud",
+            "Location & Accessibility": {
+                "Proximity to Key Areas": "10-20 min to key areas (+3)",
+                "Traffic Conditions": "Heavy traffic during peak hours (-1)"
+            },
+            "Housing Options & Costs": {
+                "Available Housing Types": "Apartments, villas (+1)",
+                "Average Rent (EUR/month)": 2500,
+                "Cost of Living Index": 65
+            },
+            "Amenities & Facilities": {
+                "Parks and Recreation": "Limited parks, near airport (0)",
+                "Healthcare Facilities": "Hospitals and clinics nearby (+2)"
+            },
+            "Community & Lifestyle": {
+                "Demographics": "Mixed expats, professionals (+1)",
+                "Family-Friendliness": "Not highly family-oriented (-1)",
+                "Safety Rating": 85
+            },
+            "Environment & Weather": {
+                "Green Spaces": "Limited, urban setting (0)",
+                "Noise Levels": "High due to airport (-2)",
+                "Air Quality Index": 60
+            },
+            "Risk Factors": {
+                "Risk of Sandstorm": "Moderate (-1)",
+                "Risk of Apartment Flooding": "Very low (+1)"
+            },
+            "Leisure & Entertainment": {
+                "Sports Facilities": "Limited, mostly gyms (0)",
+                "Beach Access": "Distant (-2)"
+            },
+            "Total Score": 6
+        },
+        {
+            "Area": "Al Karama",
+            "Location & Accessibility": {
+                "Proximity to Key Areas": "10-20 min to key areas (+3)",
+                "Traffic Conditions": "Heavy traffic (-1)"
+            },
+            "Housing Options & Costs": {
+                "Available Housing Types": "Affordable apartments, mid-range villas (+1)",
+                "Average Rent (EUR/month)": 2000,
+                "Cost of Living Index": 60
+            },
+            "Amenities & Facilities": {
+                "Parks and Recreation": "Limited parks, urban environment (0)",
+                "Healthcare Facilities": "Many clinics, hospitals nearby (+2)"
+            },
+            "Community & Lifestyle": {
+                "Demographics": "Mixed expats, families (+2)",
+                "Family-Friendliness": "Family-friendly (+1)",
+                "Safety Rating": 85
+            },
+            "Environment & Weather": {
+                "Green Spaces": "Limited, urban setting (0)",
+                "Noise Levels": "High due to traffic (-1)",
+                "Air Quality Index": 55
+            },
+            "Risk Factors": {
+                "Risk of Sandstorm": "Moderate (-1)",
+                "Risk of Apartment Flooding": "Low (+1)"
+            },
+            "Leisure & Entertainment": {
+                "Sports Facilities": "Local gyms, parks (+1)",
+                "Beach Access": "Distant (-2)"
+            },
+            "Total Score": 9
+        },{
+            "Area": "Al Lisaili",
+            "Location & Accessibility": {
+                "Proximity to Key Areas": "40+ min to key areas (-2)",
+                "Traffic Conditions": "Very light traffic (+2)"
+            },
+            "Housing Options & Costs": {
+                "Available Housing Types": "Villas, large estates (+1)",
+                "Average Rent (EUR/month)": 1500,
+                "Cost of Living Index": 55
+            },
+            "Amenities & Facilities": {
+                "Parks and Recreation": "Desert landscape, few parks (0)",
+                "Healthcare Facilities": "Few clinics, distant hospitals (-1)"
+            },
+            "Community & Lifestyle": {
+                "Demographics": "Local families, workers (+1)",
+                "Family-Friendliness": "Isolated, family-friendly (-1)",
+                "Safety Rating": 90
+            },
+            "Environment & Weather": {
+                "Green Spaces": "Desert, minimal greenery (-1)",
+                "Noise Levels": "Very quiet (+2)",
+                "Air Quality Index": 60
+            },
+            "Risk Factors": {
+                "Risk of Sandstorm": "High (-2)",
+                "Risk of Apartment Flooding": "Very low (+1)"
+            },
+            "Leisure & Entertainment": {
+                "Sports Facilities": "Limited, local sports (0)",
+                "Beach Access": "None (-3)"
+            },
+            "Total Score": -2
+        },{
+            "Area": "Al Hudaiba",
+            "Location & Accessibility": {
+                "Proximity to Key Areas": "10-20 min to key areas (+3)",
+                "Traffic Conditions": "Moderate traffic (0)"
+            },
+            "Housing Options & Costs": {
+                "Available Housing Types": "Affordable apartments, villas (+1)",
+                "Average Rent (EUR/month)": 2200,
+                "Cost of Living Index": 60
+            },
+            "Amenities & Facilities": {
+                "Parks and Recreation": "Urban parks, close to beach (+1)",
+                "Healthcare Facilities": "Hospitals and clinics nearby (+2)"
+            },
+            "Community & Lifestyle": {
+                "Demographics": "Mixed expats, families (+1)",
+                "Family-Friendliness": "Family-friendly (+1)",
+                "Safety Rating": 85
+            },
+            "Environment & Weather": {
+                "Green Spaces": "Urban parks (0)",
+                "Noise Levels": "Moderate due to traffic (0)",
+                "Air Quality Index": 55
+            },
+            "Risk Factors": {
+                "Risk of Sandstorm": "Moderate (-1)",
+                "Risk of Apartment Flooding": "Low (+1)"
+            },
+            "Leisure & Entertainment": {
+                "Sports Facilities": "Local gyms, parks (+1)",
+                "Beach Access": "Nearby public beach (+2)"
+            },
+            "Total Score": 11
+        },{
+            "Area": "Al Jaddaf",
+            "Location & Accessibility": {
+                "Proximity to Key Areas": "15-25 min to key areas (+2)",
+                "Traffic Conditions": "Heavy traffic during peak hours (-1)"
+            },
+            "Housing Options & Costs": {
+                "Available Housing Types": "Apartments, some villas (+1)",
+                "Average Rent (EUR/month)": 2500,
+                "Cost of Living Index": 65
+            },
+            "Amenities & Facilities": {
+                "Parks and Recreation": "Parks, cultural sites (+1)",
+                "Healthcare Facilities": "Nearby hospitals and clinics (+2)"
+            },
+            "Community & Lifestyle": {
+                "Demographics": "Mixed expats, professionals (+1)",
+                "Family-Friendliness": "Moderately family-friendly (+1)",
+                "Safety Rating": 85
+            },
+            "Environment & Weather": {
+                "Green Spaces": "Well-maintained parks (+1)",
+                "Noise Levels": "High due to traffic (-1)",
+                "Air Quality Index": 55
+            },
+            "Risk Factors": {
+                "Risk of Sandstorm": "Moderate (-1)",
+                "Risk of Apartment Flooding": "Low (+1)"
+            },
+            "Leisure & Entertainment": {
+                "Sports Facilities": "Community gyms, parks (+1)",
+                "Beach Access": "Distant (-2)"
+            },
+            "Total Score": 9
+        },{
+            "Area": "Al Qusais",
+            "Location & Accessibility": {
+                "Proximity to Key Areas": "20-30 min to key areas (+1)",
+                "Traffic Conditions": "Heavy traffic during peak hours (-1)"
+            },
+            "Housing Options & Costs": {
+                "Available Housing Types": "Affordable apartments, villas (+1)",
+                "Average Rent (EUR/month)": 1800,
+                "Cost of Living Index": 55
+            },
+            "Amenities & Facilities": {
+                "Parks and Recreation": "Urban parks, community centers (+1)",
+                "Healthcare Facilities": "Hospitals and clinics nearby (+2)"
+            },
+            "Community & Lifestyle": {
+                "Demographics": "Mixed expats, families (+1)",
+                "Family-Friendliness": "Family-friendly (+1)",
+                "Safety Rating": 80
+            },
+            "Environment & Weather": {
+                "Green Spaces": "Urban parks (+1)",
+                "Noise Levels": "High due to traffic (-1)",
+                "Air Quality Index": 50
+            },
+            "Risk Factors": {
+                "Risk of Sandstorm": "Moderate (-1)",
+                "Risk of Apartment Flooding": "Low (+1)"
+            },
+            "Leisure & Entertainment": {
+                "Sports Facilities": "Local gyms, community centers (+1)",
+                "Beach Access": "Distant (-2)"
+            },
+            "Total Score": 8
+        },{
+            "Area": "Al Rashidiya",
+            "Location & Accessibility": {
+                "Proximity to Key Areas": "20-30 min to key areas (+1)",
+                "Traffic Conditions": "Moderate traffic (0)"
+            },
+            "Housing Options & Costs": {
+                "Available Housing Types": "Villas, townhouses (+1)",
+                "Average Rent (EUR/month)": 2000,
+                "Cost of Living Index": 60
+            },
+            "Amenities & Facilities": {
+                "Parks and Recreation": "Community parks, desert landscape (+1)",
+                "Healthcare Facilities": "Clinics and hospitals nearby (+2)"
+            },
+            "Community & Lifestyle": {
+                "Demographics": "Local families, expats (+1)",
+                "Family-Friendliness": "Highly family-friendly (+2)",
+                "Safety Rating": 90
+            },
+            "Environment & Weather": {
+                "Green Spaces": "Parks, desert areas (0)",
+                "Noise Levels": "Quiet, residential area (+1)",
+                "Air Quality Index": 60
+            },
+            "Risk Factors": {
+                "Risk of Sandstorm": "High (-2)",
+                "Risk of Apartment Flooding": "Low (+1)"
+            },
+            "Leisure & Entertainment": {
+                "Sports Facilities": "Community sports facilities (+1)",
+                "Beach Access": "Distant (-2)"
+            },
+            "Total Score": 8
+        },{
+            "Area": "Al Safa",
+            "Location & Accessibility": {
+                "Proximity to Key Areas": "10-20 min to key areas (+3)",
+                "Traffic Conditions": "Moderate traffic (0)"
+            },
+            "Housing Options & Costs": {
+                "Available Housing Types": "Luxury villas, apartments (+2)",
+                "Average Rent (EUR/month)": 4000,
+                "Cost of Living Index": 85
+            },
+            "Amenities & Facilities": {
+                "Parks and Recreation": "Al Safa Park, community centers (+2)",
+                "Healthcare Facilities": "High-end hospitals and clinics (+3)"
+            },
+            "Community & Lifestyle": {
+                "Demographics": "Affluent expats, families (+2)",
+                "Family-Friendliness": "Highly family-friendly (+2)",
+                "Safety Rating": 95
+            },
+            "Environment & Weather": {
+                "Green Spaces": "Extensive parks (+2)",
+                "Noise Levels": "Quiet, residential (+2)",
+                "Air Quality Index": 65
+            },
+            "Risk Factors": {
+                "Risk of Sandstorm": "Low (+1)",
+                "Risk of Apartment Flooding": "Very low (+1)"
+            },
+            "Leisure & Entertainment": {
+                "Sports Facilities": "High-end sports facilities (+2)",
+                "Beach Access": "Nearby beaches (+3)"
+            },
+            "Total Score": 22
+        },{
+            "Area": "Al Satwa",
+            "Location & Accessibility": {
+                "Proximity to Key Areas": "10-20 min to key areas (+3)",
+                "Traffic Conditions": "Heavy traffic (-1)"
+            },
+            "Housing Options & Costs": {
+                "Available Housing Types": "Affordable apartments, villas (+1)",
+                "Average Rent (EUR/month)": 2500,
+                "Cost of Living Index": 65
+            },
+            "Amenities & Facilities": {
+                "Parks and Recreation": "Urban parks, limited green spaces (0)",
+                "Healthcare Facilities": "Clinics and hospitals nearby (+2)"
+            },
+            "Community & Lifestyle": {
+                "Demographics": "Mixed expats, workers (+1)",
+                "Family-Friendliness": "Moderately family-friendly (+1)",
+                "Safety Rating": 85
+            },
+            "Environment & Weather": {
+                "Green Spaces": "Limited, urban setting (0)",
+                "Noise Levels": "High due to traffic (-1)",
+                "Air Quality Index": 55
+            },
+            "Risk Factors": {
+                "Risk of Sandstorm": "Moderate (-1)",
+                "Risk of Apartment Flooding": "Low (+1)"
+            },
+            "Leisure & Entertainment": {
+                "Sports Facilities": "Local gyms, parks (+1)",
+                "Beach Access": "Distant (-2)"
+            },
+            "Total Score": 8
+        },{
+            "Area": "Al Mamzar",
+            "Location & Accessibility": {
+                "Proximity to Key Areas": "15-25 min to key areas (+2)",
+                "Traffic Conditions": "Moderate traffic (0)"
+            },
+            "Housing Options & Costs": {
+                "Available Housing Types": "Waterfront apartments, villas (+2)",
+                "Average Rent (EUR/month)": 3200,
+                "Cost of Living Index": 75
+            },
+            "Amenities & Facilities": {
+                "Parks and Recreation": "Al Mamzar Beach Park, waterfront activities (+3)",
+                "Healthcare Facilities": "Clinics and hospitals nearby (+2)"
+            },
+            "Community & Lifestyle": {
+                "Demographics": "Affluent expats, families (+2)",
+                "Family-Friendliness": "Highly family-friendly (+2)",
+                "Safety Rating": 90
+            },
+            "Environment & Weather": {
+                "Green Spaces": "Extensive beachfront parks (+2)",
+                "Noise Levels": "Quiet, residential (+2)",
+                "Air Quality Index": 60
+            },
+            "Risk Factors": {
+                "Risk of Sandstorm": "Low (+1)",
+                "Risk of Apartment Flooding": "Moderate due to coastal location (0)"
+            },
+            "Leisure & Entertainment": {
+                "Sports Facilities": "Water sports, beach activities (+3)",
+                "Beach Access": "Direct beach access (+3)"
+            },
+            "Total Score": 22
+        },{
+            "Area": "Al Mina",
+            "Location & Accessibility": {
+                "Proximity to Key Areas": "15-25 min to key areas (+2)",
+                "Traffic Conditions": "Heavy traffic (-1)"
+            },
+            "Housing Options & Costs": {
+                "Available Housing Types": "Apartments, some villas (+1)",
+                "Average Rent (EUR/month)": 2500,
+                "Cost of Living Index": 65
+            },
+            "Amenities & Facilities": {
+                "Parks and Recreation": "Limited parks, near port area (0)",
+                "Healthcare Facilities": "Clinics and hospitals nearby (+2)"
+            },
+            "Community & Lifestyle": {
+                "Demographics": "Mixed expats, workers (+1)",
+                "Family-Friendliness": "Moderately family-friendly (+1)",
+                "Safety Rating": 85
+            },
+            "Environment & Weather": {
+                "Green Spaces": "Limited, urban setting (0)",
+                "Noise Levels": "High due to port activity (-1)",
+                "Air Quality Index": 55
+            },
+            "Risk Factors": {
+                "Risk of Sandstorm": "Moderate (-1)",
+                "Risk of Apartment Flooding": "Low (+1)"
+            },
+            "Leisure & Entertainment": {
+                "Sports Facilities": "Local gyms, limited sports facilities (0)",
+                "Beach Access": "Distant (-2)"
+            },
+            "Total Score": 8
+        },{
+            "Area": "Al Nahda",
+            "Location & Accessibility": {
+                "Proximity to Key Areas": "20-30 min to key areas (+1)",
+                "Traffic Conditions": "Heavy traffic during peak hours (-1)"
+            },
+            "Housing Options & Costs": {
+                "Available Housing Types": "Affordable apartments (+1)",
+                "Average Rent (EUR/month)": 1500,
+                "Cost of Living Index": 55
+            },
+            "Amenities & Facilities": {
+                "Parks and Recreation": "Al Nahda Pond Park, community centers (+1)",
+                "Healthcare Facilities": "Hospitals and clinics nearby (+2)"
+            },
+            "Community & Lifestyle": {
+                "Demographics": "Mixed expats, families (+1)",
+                "Family-Friendliness": "Family-friendly (+1)",
+                "Safety Rating": 80
+            },
+            "Environment & Weather": {
+                "Green Spaces": "Urban parks (+1)",
+                "Noise Levels": "High due to traffic (-1)",
+                "Air Quality Index": 50
+            },
+            "Risk Factors": {
+                "Risk of Sandstorm": "Moderate (-1)",
+                "Risk of Apartment Flooding": "Low (+1)"
+            },
+            "Leisure & Entertainment": {
+                "Sports Facilities": "Local gyms, community centers (+1)",
+                "Beach Access": "Distant (-2)"
+            },
+            "Total Score": 7
+        },{
+            "Area": "Al Quoz",
+            "Location & Accessibility": {
+                "Proximity to Key Areas": "20-30 min to key areas (+1)",
+                "Traffic Conditions": "Heavy traffic (-1)"
+            },
+            "Housing Options & Costs": {
+                "Available Housing Types": "Apartments, some villas (+1)",
+                "Average Rent (EUR/month)": 1800,
+                "Cost of Living Index": 60
+            },
+            "Amenities & Facilities": {
+                "Parks and Recreation": "Al Quoz Park, limited green spaces (0)",
+                "Healthcare Facilities": "Clinics and hospitals nearby (+2)"
+            },
+            "Community & Lifestyle": {
+                "Demographics": "Mixed expats, workers (+1)",
+                "Family-Friendliness": "Moderately family-friendly (+1)",
+                "Safety Rating": 85
+            },
+            "Environment & Weather": {
+                "Green Spaces": "Limited, industrial setting (0)",
+                "Noise Levels": "High due to industrial activity (-1)",
+                "Air Quality Index": 55
+            },
+            "Risk Factors": {
+                "Risk of Sandstorm": "Moderate (-1)",
+                "Risk of Apartment Flooding": "Low (+1)"
+            },
+            "Leisure & Entertainment": {
+                "Sports Facilities": "Local gyms, limited sports facilities (0)",
+                "Beach Access": "Distant (-2)"
+            },
+            "Total Score": 7
+        },{
+            "Area": "Al Sufouh",
+            "Location & Accessibility": {
+                "Proximity to Key Areas": "10-20 min to key areas (+3)",
+                "Traffic Conditions": "Moderate traffic (0)"
+            },
+            "Housing Options & Costs": {
+                "Available Housing Types": "Luxury apartments, villas (+2)",
+                "Average Rent (EUR/month)": 3500,
+                "Cost of Living Index": 80
+            },
+            "Amenities & Facilities": {
+                "Parks and Recreation": "Beach parks, community centers (+2)",
+                "Healthcare Facilities": "High-end hospitals and clinics (+3)"
+            },
+            "Community & Lifestyle": {
+                "Demographics": "Affluent expats, families (+2)",
+                "Family-Friendliness": "Highly family-friendly (+2)",
+                "Safety Rating": 95
+            },
+            "Environment & Weather": {
+                "Green Spaces": "Extensive parks (+2)",
+                "Noise Levels": "Quiet, residential (+2)",
+                "Air Quality Index": 65
+            },
+            "Risk Factors": {
+                "Risk of Sandstorm": "Low (+1)",
+                "Risk of Apartment Flooding": "Low (+1)"
+            },
+            "Leisure & Entertainment": {
+                "Sports Facilities": "High-end sports facilities (+2)",
+                "Beach Access": "Direct beach access (+3)"
+            },
+            "Total Score": 28
+        },{
+            "Area": "Al Twar",
+            "Location & Accessibility": {
+                "Proximity to Key Areas": "15-25 min to key areas (+2)",
+                "Traffic Conditions": "Moderate traffic (0)"
+            },
+            "Housing Options & Costs": {
+                "Available Housing Types": "Affordable villas, apartments (+1)",
+                "Average Rent (EUR/month)": 2000,
+                "Cost of Living Index": 60
+            },
+            "Amenities & Facilities": {
+                "Parks and Recreation": "Community parks, local centers (+1)",
+                "Healthcare Facilities": "Clinics and hospitals nearby (+2)"
+            },
+            "Community & Lifestyle": {
+                "Demographics": "Mixed expats, families (+1)",
+                "Family-Friendliness": "Family-friendly (+1)",
+                "Safety Rating": 85
+            },
+            "Environment & Weather": {
+                "Green Spaces": "Well-maintained parks (+1)",
+                "Noise Levels": "Quiet, residential area (+1)",
+                "Air Quality Index": 55
+            },
+            "Risk Factors": {
+                "Risk of Sandstorm": "Moderate (-1)",
+                "Risk of Apartment Flooding": "Low (+1)"
+            },
+            "Leisure & Entertainment": {
+                "Sports Facilities": "Local gyms, community centers (+1)",
+                "Beach Access": "Distant (-2)"
+            },
+            "Total Score": 13
+        },{
+            "Area": "Al Warqaa",
+            "Location & Accessibility": {
+                "Proximity to Key Areas": "20-30 min to key areas (+1)",
+                "Traffic Conditions": "Moderate traffic (0)"
+            },
+            "Housing Options & Costs": {
+                "Available Housing Types": "Villas, townhouses (+1)",
+                "Average Rent (EUR/month)": 2200,
+                "Cost of Living Index": 60
+            },
+            "Amenities & Facilities": {
+                "Parks and Recreation": "Community parks, Mirdif City Centre nearby (+2)",
+                "Healthcare Facilities": "Clinics and hospitals nearby (+2)"
+            },
+            "Community & Lifestyle": {
+                "Demographics": "Mixed expats, families (+1)",
+                "Family-Friendliness": "Highly family-friendly (+2)",
+                "Safety Rating": 90
+            },
+            "Environment & Weather": {
+                "Green Spaces": "Well-maintained parks (+1)",
+                "Noise Levels": "Quiet, residential area (+1)",
+                "Air Quality Index": 60
+            },
+            "Risk Factors": {
+                "Risk of Sandstorm": "Moderate (-1)",
+                "Risk of Apartment Flooding": "Low (+1)"
+            },
+            "Leisure & Entertainment": {
+                "Sports Facilities": "Local gyms, community centers (+1)",
+                "Beach Access": "Distant (-2)"
+            },
+            "Total Score": 14
+        },{
+            "Area": "Al Warsan",
+            "Location & Accessibility": {
+                "Proximity to Key Areas": "25-35 min to key areas (0)",
+                "Traffic Conditions": "Moderate traffic (0)"
+            },
+            "Housing Options & Costs": {
+                "Available Housing Types": "Affordable apartments, some villas (+1)",
+                "Average Rent (EUR/month)": 1600,
+                "Cost of Living Index": 55
+            },
+            "Amenities & Facilities": {
+                "Parks and Recreation": "Limited parks, desert landscape (0)",
+                "Healthcare Facilities": "Few clinics, distant hospitals (-1)"
+            },
+            "Community & Lifestyle": {
+                "Demographics": "Mixed expats, workers (0)",
+                "Family-Friendliness": "Moderately family-friendly (0)",
+                "Safety Rating": 80
+            },
+            "Environment & Weather": {
+                "Green Spaces": "Minimal green areas, desert landscape (-1)",
+                "Noise Levels": "Quiet, remote area (+1)",
+                "Air Quality Index": 55
+            },
+            "Risk Factors": {
+                "Risk of Sandstorm": "High (-2)",
+                "Risk of Apartment Flooding": "Very low (+1)"
+            },
+            "Leisure & Entertainment": {
+                "Sports Facilities": "Limited, local gyms (0)",
+                "Beach Access": "None (-3)"
+            },
+            "Total Score": -6
+        },{
+            "Area": "Al Warqaa",
+            "Location & Accessibility": {
+                "Proximity to Key Areas": "20-30 min to key areas (+1)",
+                "Traffic Conditions": "Moderate traffic (0)"
+            },
+            "Housing Options & Costs": {
+                "Available Housing Types": "Villas, townhouses (+1)",
+                "Average Rent (EUR/month)": 2200,
+                "Cost of Living Index": 60
+            },
+            "Amenities & Facilities": {
+                "Parks and Recreation": "Community parks, Mirdif City Centre nearby (+2)",
+                "Healthcare Facilities": "Clinics and hospitals nearby (+2)"
+            },
+            "Community & Lifestyle": {
+                "Demographics": "Mixed expats, families (+1)",
+                "Family-Friendliness": "Highly family-friendly (+2)",
+                "Safety Rating": 90
+            },
+            "Environment & Weather": {
+                "Green Spaces": "Well-maintained parks (+1)",
+                "Noise Levels": "Quiet, residential area (+1)",
+                "Air Quality Index": 60
+            },
+            "Risk Factors": {
+                "Risk of Sandstorm": "Moderate (-1)",
+                "Risk of Apartment Flooding": "Low (+1)"
+            },
+            "Leisure & Entertainment": {
+                "Sports Facilities": "Local gyms, community centers (+1)",
+                "Beach Access": "Distant (-2)"
+            },
+            "Total Score": 14
+        },{
+            "Area": "Al Warsan",
+            "Location & Accessibility": {
+                "Proximity to Key Areas": "25-35 min to key areas (0)",
+                "Traffic Conditions": "Moderate traffic (0)"
+            },
+            "Housing Options & Costs": {
+                "Available Housing Types": "Affordable apartments, some villas (+1)",
+                "Average Rent (EUR/month)": 1600,
+                "Cost of Living Index": 55
+            },
+            "Amenities & Facilities": {
+                "Parks and Recreation": "Limited parks, desert landscape (0)",
+                "Healthcare Facilities": "Few clinics, distant hospitals (-1)"
+            },
+            "Community & Lifestyle": {
+                "Demographics": "Mixed expats, workers (0)",
+                "Family-Friendliness": "Moderately family-friendly (0)",
+                "Safety Rating": 80
+            },
+            "Environment & Weather": {
+                "Green Spaces": "Minimal green areas, desert landscape (-1)",
+                "Noise Levels": "Quiet, remote area (+1)",
+                "Air Quality Index": 55
+            },
+            "Risk Factors": {
+                "Risk of Sandstorm": "High (-2)",
+                "Risk of Apartment Flooding": "Very low (+1)"
+            },
+            "Leisure & Entertainment": {
+                "Sports Facilities": "Limited, local gyms (0)",
+                "Beach Access": "None (-3)"
+            },
+            "Total Score": -6
+        },{
+            "Area": "Al Wasl",
+            "Location & Accessibility": {
+                "Proximity to Key Areas": "10-20 min to key areas (+3)",
+                "Traffic Conditions": "Moderate traffic (0)"
+            },
+            "Housing Options & Costs": {
+                "Available Housing Types": "Luxury villas, apartments (+2)",
+                "Average Rent (EUR/month)": 4000,
+                "Cost of Living Index": 80
+            },
+            "Amenities & Facilities": {
+                "Parks and Recreation": "Al Wasl Park, community centers (+2)",
+                "Healthcare Facilities": "High-end hospitals and clinics (+3)"
+            },
+            "Community & Lifestyle": {
+                "Demographics": "Affluent expats, families (+2)",
+                "Family-Friendliness": "Highly family-friendly (+2)",
+                "Safety Rating": 95
+            },
+            "Environment & Weather": {
+                "Green Spaces": "Extensive parks (+2)",
+                "Noise Levels": "Quiet, residential (+2)",
+                "Air Quality Index": 65
+            },
+            "Risk Factors": {
+                "Risk of Sandstorm": "Low (+1)",
+                "Risk of Apartment Flooding": "Low (+1)"
+            },
+            "Leisure & Entertainment": {
+                "Sports Facilities": "High-end sports facilities (+2)",
+                "Beach Access": "Nearby beaches (+3)"
+            },
+            "Total Score": 28
+        },{
+            "Area": "Arabian Ranches 2",
+            "Location & Accessibility": {
+                "Proximity to Key Areas": "20-30 min to key areas (+1)",
+                "Traffic Conditions": "Moderate traffic (0)"
+            },
+            "Housing Options & Costs": {
+                "Available Housing Types": "Villas, townhouses (+2)",
+                "Average Rent (EUR/month)": 3200,
+                "Cost of Living Index": 75
+            },
+            "Amenities & Facilities": {
+                "Parks and Recreation": "Community parks, sports facilities (+2)",
+                "Healthcare Facilities": "Clinics and hospitals nearby (+2)"
+            },
+            "Community & Lifestyle": {
+                "Demographics": "Affluent expats, families (+2)",
+                "Family-Friendliness": "Highly family-friendly (+2)",
+                "Safety Rating": 95
+            },
+            "Environment & Weather": {
+                "Green Spaces": "Extensive parks (+2)",
+                "Noise Levels": "Quiet, residential (+2)",
+                "Air Quality Index": 65
+            },
+            "Risk Factors": {
+                "Risk of Sandstorm": "Low (+1)",
+                "Risk of Apartment Flooding": "Low (+1)"
+            },
+            "Leisure & Entertainment": {
+                "Sports Facilities": "High-end sports facilities (+2)",
+                "Beach Access": "Distant (-2)"
+            },
+            "Total Score": 24
+        },{
+            "Area": "Arjan",
+            "Location & Accessibility": {
+                "Proximity to Key Areas": "20-30 min to key areas (+1)",
+                "Traffic Conditions": "Moderate traffic (0)"
+            },
+            "Housing Options & Costs": {
+                "Available Housing Types": "Mid-range apartments, some villas (+1)",
+                "Average Rent (EUR/month)": 2000,
+                "Cost of Living Index": 65
+            },
+            "Amenities & Facilities": {
+                "Parks and Recreation": "Community parks, Miracle Garden (+2)",
+                "Healthcare Facilities": "Clinics and hospitals nearby (+2)"
+            },
+            "Community & Lifestyle": {
+                "Demographics": "Mixed expats, families (+1)",
+                "Family-Friendliness": "Moderately family-friendly (+1)",
+                "Safety Rating": 85
+            },
+            "Environment & Weather": {
+                "Green Spaces": "Well-maintained parks (+1)",
+                "Noise Levels": "Quiet, residential area (+1)",
+                "Air Quality Index": 60
+            },
+            "Risk Factors": {
+                "Risk of Sandstorm": "Moderate (-1)",
+                "Risk of Apartment Flooding": "Low (+1)"
+            },
+            "Leisure & Entertainment": {
+                "Sports Facilities": "Local gyms, community centers (+1)",
+                "Beach Access": "Distant (-2)"
+            },
+            "Total Score": 11
+        },{
+            "Area": "Barsha Heights (Tecom)",
+            "Location & Accessibility": {
+                "Proximity to Key Areas": "15-25 min to key areas (+2)",
+                "Traffic Conditions": "Heavy traffic during peak hours (-1)"
+            },
+            "Housing Options & Costs": {
+                "Available Housing Types": "Apartments, some villas (+1)",
+                "Average Rent (EUR/month)": 2500,
+                "Cost of Living Index": 70
+            },
+            "Amenities & Facilities": {
+                "Parks and Recreation": "Urban parks, limited green spaces (0)",
+                "Healthcare Facilities": "Clinics and hospitals nearby (+2)"
+            },
+            "Community & Lifestyle": {
+                "Demographics": "Mixed expats, professionals (+1)",
+                "Family-Friendliness": "Moderately family-friendly (+1)",
+                "Safety Rating": 85
+            },
+            "Environment & Weather": {
+                "Green Spaces": "Limited, urban setting (0)",
+                "Noise Levels": "High due to traffic (-1)",
+                "Air Quality Index": 55
+            },
+            "Risk Factors": {
+                "Risk of Sandstorm": "Moderate (-1)",
+                "Risk of Apartment Flooding": "Low (+1)"
+            },
+            "Leisure & Entertainment": {
+                "Sports Facilities": "Local gyms, community centers (+1)",
+                "Beach Access": "Distant (-2)"
+            },
+            "Total Score": 7
+        },{
+            "Area": "Bluewaters Island",
+            "Location & Accessibility": {
+                "Proximity to Key Areas": "10-20 min to key areas (+3)",
+                "Traffic Conditions": "Moderate traffic (0)"
+            },
+            "Housing Options & Costs": {
+                "Available Housing Types": "Luxury apartments, villas (+3)",
+                "Average Rent (EUR/month)": 5000,
+                "Cost of Living Index": 90
+            },
+            "Amenities & Facilities": {
+                "Parks and Recreation": "Beachfront parks, luxury amenities (+3)",
+                "Healthcare Facilities": "High-end clinics and hospitals (+3)"
+            },
+            "Community & Lifestyle": {
+                "Demographics": "Affluent expats, families (+2)",
+                "Family-Friendliness": "Highly family-friendly (+2)",
+                "Safety Rating": 95
+            },
+            "Environment & Weather": {
+                "Green Spaces": "Extensive parks (+2)",
+                "Noise Levels": "Quiet, residential (+2)",
+                "Air Quality Index": 65
+            },
+            "Risk Factors": {
+                "Risk of Sandstorm": "Low (+1)",
+                "Risk of Apartment Flooding": "Low (+1)"
+            },
+            "Leisure & Entertainment": {
+                "Sports Facilities": "High-end sports facilities (+2)",
+                "Beach Access": "Direct beach access (+3)"
+            },
+            "Total Score": 30
+        },{
+            "Area": "Bur Dubai",
+            "Location & Accessibility": {
+                "Proximity to Key Areas": "10-20 min to key areas (+3)",
+                "Traffic Conditions": "Heavy traffic during peak hours (-1)"
+            },
+            "Housing Options & Costs": {
+                "Available Housing Types": "Apartments, some villas (+1)",
+                "Average Rent (EUR/month)": 2200,
+                "Cost of Living Index": 65
+            },
+            "Amenities & Facilities": {
+                "Parks and Recreation": "Urban parks, cultural sites (+2)",
+                "Healthcare Facilities": "Clinics and hospitals nearby (+2)"
+            },
+            "Community & Lifestyle": {
+                "Demographics": "Mixed expats, families (+1)",
+                "Family-Friendliness": "Moderately family-friendly (+1)",
+                "Safety Rating": 85
+            },
+            "Environment & Weather": {
+                "Green Spaces": "Limited, urban setting (0)",
+                "Noise Levels": "High due to traffic (-1)",
+                "Air Quality Index": 55
+            },
+            "Risk Factors": {
+                "Risk of Sandstorm": "Moderate (-1)",
+                "Risk of Apartment Flooding": "Low (+1)"
+            },
+            "Leisure & Entertainment": {
+                "Sports Facilities": "Local gyms, cultural activities (+1)",
+                "Beach Access": "Distant (-2)"
+            },
+            "Total Score": 10
+        },{
+            "Area": "Culture Village (Jaddaf Waterfront)",
+            "Location & Accessibility": {
+                "Proximity to Key Areas": "15-25 min to key areas (+2)",
+                "Traffic Conditions": "Moderate traffic (0)"
+            },
+            "Housing Options & Costs": {
+                "Available Housing Types": "Luxury apartments, some villas (+2)",
+                "Average Rent (EUR/month)": 3000,
+                "Cost of Living Index": 75
+            },
+            "Amenities & Facilities": {
+                "Parks and Recreation": "Waterfront parks, cultural sites (+2)",
+                "Healthcare Facilities": "High-end clinics and hospitals (+3)"
+            },
+            "Community & Lifestyle": {
+                "Demographics": "Affluent expats, families (+2)",
+                "Family-Friendliness": "Highly family-friendly (+2)",
+                "Safety Rating": 90
+            },
+            "Environment & Weather": {
+                "Green Spaces": "Extensive parks (+2)",
+                "Noise Levels": "Quiet, residential (+2)",
+                "Air Quality Index": 65
+            },
+            "Risk Factors": {
+                "Risk of Sandstorm": "Low (+1)",
+                "Risk of Apartment Flooding": "Moderate due to waterfront location (0)"
+            },
+            "Leisure & Entertainment": {
+                "Sports Facilities": "High-end sports facilities (+2)",
+                "Beach Access": "Distant (-2)"
+            },
+            "Total Score": 21
+        },{
+            "Area": "DAMAC Hills",
+            "Location & Accessibility": {
+                "Proximity to Key Areas": "20-30 min to key areas (+1)",
+                "Traffic Conditions": "Moderate traffic (0)"
+            },
+            "Housing Options & Costs": {
+                "Available Housing Types": "Luxury villas, townhouses, apartments (+2)",
+                "Average Rent (EUR/month)": 3500,
+                "Cost of Living Index": 80
+            },
+            "Amenities & Facilities": {
+                "Parks and Recreation": "Golf courses, luxury amenities (+3)",
+                "Healthcare Facilities": "Clinics and hospitals nearby (+2)"
+            },
+            "Community & Lifestyle": {
+                "Demographics": "Affluent expats, families (+2)",
+                "Family-Friendliness": "Highly family-friendly (+2)",
+                "Safety Rating": 90
+            },
+            "Environment & Weather": {
+                "Green Spaces": "Extensive parks, golf courses (+3)",
+                "Noise Levels": "Quiet, residential (+2)",
+                "Air Quality Index": 65
+            },
+            "Risk Factors": {
+                "Risk of Sandstorm": "Low (+1)",
+                "Risk of Apartment Flooding": "Low (+1)"
+            },
+            "Leisure & Entertainment": {
+                "Sports Facilities": "Golf, high-end sports facilities (+3)",
+                "Beach Access": "Distant (-2)"
+            },
+            "Total Score": 23
+        },{
+            "Area": "DAMAC Hills 2 (Akoya by DAMAC)",
+            "Location & Accessibility": {
+                "Proximity to Key Areas": "30-40 min to key areas (-1)",
+                "Traffic Conditions": "Light traffic (+1)"
+            },
+            "Housing Options & Costs": {
+                "Available Housing Types": "Affordable villas, townhouses (+1)",
+                "Average Rent (EUR/month)": 1800,
+                "Cost of Living Index": 60
+            },
+            "Amenities & Facilities": {
+                "Parks and Recreation": "Community parks, outdoor activities (+2)",
+                "Healthcare Facilities": "Clinics nearby, distant hospitals (-1)"
+            },
+            "Community & Lifestyle": {
+                "Demographics": "Mixed expats, families (+1)",
+                "Family-Friendliness": "Highly family-friendly (+2)",
+                "Safety Rating": 85
+            },
+            "Environment & Weather": {
+                "Green Spaces": "Well-maintained parks (+1)",
+                "Noise Levels": "Quiet, suburban (+1)",
+                "Air Quality Index": 60
+            },
+            "Risk Factors": {
+                "Risk of Sandstorm": "Moderate (-1)",
+                "Risk of Apartment Flooding": "Very low (+1)"
+            },
+            "Leisure & Entertainment": {
+                "Sports Facilities": "Local gyms, outdoor activities (+1)",
+                "Beach Access": "Distant (-2)"
+            },
+            "Total Score": 10
+        },{
+            "Area": "DIFC (Dubai International Financial Centre)",
+            "Location & Accessibility": {
+                "Proximity to Key Areas": "10-20 min to key areas (+3)",
+                "Traffic Conditions": "Heavy traffic during peak hours (-1)"
+            },
+            "Housing Options & Costs": {
+                "Available Housing Types": "Luxury apartments, some penthouses (+3)",
+                "Average Rent (EUR/month)": 5000,
+                "Cost of Living Index": 90
+            },
+            "Amenities & Facilities": {
+                "Parks and Recreation": "Urban parks, cultural sites (+2)",
+                "Healthcare Facilities": "High-end clinics and hospitals (+3)"
+            },
+            "Community & Lifestyle": {
+                "Demographics": "Affluent expats, professionals (+2)",
+                "Family-Friendliness": "Moderately family-friendly (+1)",
+                "Safety Rating": 90
+            },
+            "Environment & Weather": {
+                "Green Spaces": "Limited, urban setting (0)",
+                "Noise Levels": "High due to traffic (-1)",
+                "Air Quality Index": 55
+            },
+            "Risk Factors": {
+                "Risk of Sandstorm": "Low (+1)",
+                "Risk of Apartment Flooding": "Low (+1)"
+            },
+            "Leisure & Entertainment": {
+                "Sports Facilities": "High-end gyms, cultural activities (+2)",
+                "Beach Access": "Distant (-2)"
+            },
+            "Total Score": 18
+        },{
+            "Area": "Deira",
+            "Location & Accessibility": {
+                "Proximity to Key Areas": "10-20 min to key areas (+3)",
+                "Traffic Conditions": "Heavy traffic during peak hours (-1)"
+            },
+            "Housing Options & Costs": {
+                "Available Housing Types": "Affordable apartments (+1)",
+                "Average Rent (EUR/month)": 1800,
+                "Cost of Living Index": 60
+            },
+            "Amenities & Facilities": {
+                "Parks and Recreation": "Urban parks, cultural sites (+2)",
+                "Healthcare Facilities": "Clinics and hospitals nearby (+2)"
+            },
+            "Community & Lifestyle": {
+                "Demographics": "Mixed expats, families (+1)",
+                "Family-Friendliness": "Moderately family-friendly (+1)",
+                "Safety Rating": 80
+            },
+            "Environment & Weather": {
+                "Green Spaces": "Limited, urban setting (0)",
+                "Noise Levels": "High due to traffic (-1)",
+                "Air Quality Index": 55
+            },
+            "Risk Factors": {
+                "Risk of Sandstorm": "Moderate (-1)",
+                "Risk of Apartment Flooding": "Low (+1)"
+            },
+            "Leisure & Entertainment": {
+                "Sports Facilities": "Local gyms, cultural activities (+1)",
+                "Beach Access": "Distant (-2)"
+            },
+            "Total Score": 10
+        },{
+            "Area": "Discovery Gardens",
+            "Location & Accessibility": {
+                "Proximity to Key Areas": "20-30 min to key areas (+1)",
+                "Traffic Conditions": "Moderate traffic (0)"
+            },
+            "Housing Options & Costs": {
+                "Available Housing Types": "Affordable apartments, townhouses (+1)",
+                "Average Rent (EUR/month)": 1500,
+                "Cost of Living Index": 55
+            },
+            "Amenities & Facilities": {
+                "Parks and Recreation": "Community parks, outdoor spaces (+2)",
+                "Healthcare Facilities": "Clinics nearby, distant hospitals (-1)"
+            },
+            "Community & Lifestyle": {
+                "Demographics": "Mixed expats, families (+1)",
+                "Family-Friendliness": "Highly family-friendly (+2)",
+                "Safety Rating": 85
+            },
+            "Environment & Weather": {
+                "Green Spaces": "Well-maintained parks (+1)",
+                "Noise Levels": "Quiet, residential (+1)",
+                "Air Quality Index": 60
+            },
+            "Risk Factors": {
+                "Risk of Sandstorm": "Moderate (-1)",
+                "Risk of Apartment Flooding": "Low (+1)"
+            },
+            "Leisure & Entertainment": {
+                "Sports Facilities": "Local gyms, community centers (+1)",
+                "Beach Access": "Distant (-2)"
+            },
+            "Total Score": 10
+        },{
+            "Area": "Downtown Dubai",
+            "Location & Accessibility": {
+                "Proximity to Key Areas": "10-20 min to key areas (+3)",
+                "Traffic Conditions": "Heavy traffic during peak hours (-1)"
+            },
+            "Housing Options & Costs": {
+                "Available Housing Types": "Luxury apartments, penthouses (+3)",
+                "Average Rent (EUR/month)": 4500,
+                "Cost of Living Index": 90
+            },
+            "Amenities & Facilities": {
+                "Parks and Recreation": "Urban parks, cultural landmarks (+3)",
+                "Healthcare Facilities": "High-end clinics and hospitals (+3)"
+            },
+            "Community & Lifestyle": {
+                "Demographics": "Affluent expats, professionals (+2)",
+                "Family-Friendliness": "Moderately family-friendly (+1)",
+                "Safety Rating": 90
+            },
+            "Environment & Weather": {
+                "Green Spaces": "Limited, urban setting (0)",
+                "Noise Levels": "High due to traffic (-1)",
+                "Air Quality Index": 55
+            },
+            "Risk Factors": {
+                "Risk of Sandstorm": "Low (+1)",
+                "Risk of Apartment Flooding": "Low (+1)"
+            },
+            "Leisure & Entertainment": {
+                "Sports Facilities": "High-end gyms, cultural activities (+2)",
+                "Beach Access": "Distant (-2)"
+            },
+            "Total Score": 22
+        },{
+            "Area": "Dubai Creek Harbour",
+            "Location & Accessibility": {
+                "Proximity to Key Areas": "15-25 min to key areas (+2)",
+                "Traffic Conditions": "Moderate traffic (0)"
+            },
+            "Housing Options & Costs": {
+                "Available Housing Types": "Luxury apartments, waterfront villas (+2)",
+                "Average Rent (EUR/month)": 3500,
+                "Cost of Living Index": 80
+            },
+            "Amenities & Facilities": {
+                "Parks and Recreation": "Waterfront parks, luxury amenities (+3)",
+                "Healthcare Facilities": "High-end clinics and hospitals (+3)"
+            },
+            "Community & Lifestyle": {
+                "Demographics": "Affluent expats, families (+2)",
+                "Family-Friendliness": "Highly family-friendly (+2)",
+                "Safety Rating": 90
+            },
+            "Environment & Weather": {
+                "Green Spaces": "Extensive parks (+2)",
+                "Noise Levels": "Quiet, residential (+2)",
+                "Air Quality Index": 65
+            },
+            "Risk Factors": {
+                "Risk of Sandstorm": "Low (+1)",
+                "Risk of Apartment Flooding": "Moderate due to waterfront location (0)"
+            },
+            "Leisure & Entertainment": {
+                "Sports Facilities": "High-end sports facilities (+2)",
+                "Beach Access": "Distant (-2)"
+            },
+            "Total Score": 22
+        },{
+            "Area": "Dubai Festival City",
+            "Location & Accessibility": {
+                "Proximity to Key Areas": "15-25 min to key areas (+2)",
+                "Traffic Conditions": "Moderate traffic (0)"
+            },
+            "Housing Options & Costs": {
+                "Available Housing Types": "Luxury apartments, waterfront villas (+2)",
+                "Average Rent (EUR/month)": 3200,
+                "Cost of Living Index": 75
+            },
+            "Amenities & Facilities": {
+                "Parks and Recreation": "Waterfront parks, Festival City Mall (+3)",
+                "Healthcare Facilities": "High-end clinics and hospitals (+3)"
+            },
+            "Community & Lifestyle": {
+                "Demographics": "Affluent expats, families (+2)",
+                "Family-Friendliness": "Highly family-friendly (+2)",
+                "Safety Rating": 90
+            },
+            "Environment & Weather": {
+                "Green Spaces": "Extensive parks (+2)",
+                "Noise Levels": "Quiet, residential (+2)",
+                "Air Quality Index": 65
+            },
+            "Risk Factors": {
+                "Risk of Sandstorm": "Low (+1)",
+                "Risk of Apartment Flooding": "Moderate due to waterfront location (0)"
+            },
+            "Leisure & Entertainment": {
+                "Sports Facilities": "High-end sports facilities (+2)",
+                "Beach Access": "Distant (-2)"
+            },
+            "Total Score": 22
+        },{
+            "Area": "Dubai Hills Estate",
+            "Location & Accessibility": {
+                "Proximity to Key Areas": "20-30 min to key areas (+1)",
+                "Traffic Conditions": "Moderate traffic (0)"
+            },
+            "Housing Options & Costs": {
+                "Available Housing Types": "Luxury villas, townhouses (+2)",
+                "Average Rent (EUR/month)": 3800,
+                "Cost of Living Index": 80
+            },
+            "Amenities & Facilities": {
+                "Parks and Recreation": "Golf courses, luxury amenities (+3)",
+                "Healthcare Facilities": "High-end clinics and hospitals (+3)"
+            },
+            "Community & Lifestyle": {
+                "Demographics": "Affluent expats, families (+2)",
+                "Family-Friendliness": "Highly family-friendly (+2)",
+                "Safety Rating": 90
+            },
+            "Environment & Weather": {
+                "Green Spaces": "Extensive parks, golf courses (+3)",
+                "Noise Levels": "Quiet, residential (+2)",
+                "Air Quality Index": 65
+            },
+            "Risk Factors": {
+                "Risk of Sandstorm": "Low (+1)",
+                "Risk of Apartment Flooding": "Low (+1)"
+            },
+            "Leisure & Entertainment": {
+                "Sports Facilities": "Golf, high-end sports facilities (+3)",
+                "Beach Access": "Distant (-2)"
+            },
+            "Total Score": 23
+        },{
+            "Area": "Dubai Industrial City",
+            "Location & Accessibility": {
+                "Proximity to Key Areas": "30-40 min to key areas (-1)",
+                "Traffic Conditions": "Light traffic (+1)"
+            },
+            "Housing Options & Costs": {
+                "Available Housing Types": "Affordable apartments, worker accommodations (+1)",
+                "Average Rent (EUR/month)": 1200,
+                "Cost of Living Index": 50
+            },
+            "Amenities & Facilities": {
+                "Parks and Recreation": "Limited parks, industrial landscape (0)",
+                "Healthcare Facilities": "Few clinics, distant hospitals (-1)"
+            },
+            "Community & Lifestyle": {
+                "Demographics": "Mixed expats, workers (0)",
+                "Family-Friendliness": "Not highly family-oriented (-1)",
+                "Safety Rating": 80
+            },
+            "Environment & Weather": {
+                "Green Spaces": "Minimal green areas, industrial landscape (-1)",
+                "Noise Levels": "High due to industrial activity (-1)",
+                "Air Quality Index": 55
+            },
+            "Risk Factors": {
+                "Risk of Sandstorm": "High (-2)",
+                "Risk of Apartment Flooding": "Very low (+1)"
+            },
+            "Leisure & Entertainment": {
+                "Sports Facilities": "Limited, local gyms (0)",
+                "Beach Access": "None (-3)"
+            },
+            "Total Score": -8
+        },{
+            "Area": "Dubai Marina",
+            "Location & Accessibility": {
+                "Proximity to Key Areas": "10-20 min to key areas (+3)",
+                "Traffic Conditions": "Heavy traffic during peak hours (-1)"
+            },
+            "Housing Options & Costs": {
+                "Available Housing Types": "Luxury apartments, penthouses (+3)",
+                "Average Rent (EUR/month)": 4500,
+                "Cost of Living Index": 90
+            },
+            "Amenities & Facilities": {
+                "Parks and Recreation": "Waterfront parks, luxury amenities (+3)",
+                "Healthcare Facilities": "High-end clinics and hospitals (+3)"
+            },
+            "Community & Lifestyle": {
+                "Demographics": "Affluent expats, professionals (+2)",
+                "Family-Friendliness": "Moderately family-friendly (+1)",
+                "Safety Rating": 90
+            },
+            "Environment & Weather": {
+                "Green Spaces": "Limited, urban setting (0)",
+                "Noise Levels": "High due to traffic (-1)",
+                "Air Quality Index": 55
+            },
+            "Risk Factors": {
+                "Risk of Sandstorm": "Low (+1)",
+                "Risk of Apartment Flooding": "Moderate due to waterfront location (0)"
+            },
+            "Leisure & Entertainment": {
+                "Sports Facilities": "High-end gyms, waterfront activities (+3)",
+                "Beach Access": "Direct beach access (+3)"
+            },
+            "Total Score": 22
+        },{
+            "Area": "Ras Al Khor",
+            "Location & Accessibility": {
+                "Proximity to Key Areas": "20-30 min to key areas (+1)",
+                "Traffic Conditions": "Moderate traffic (0)"
+            },
+            "Housing Options & Costs": {
+                "Available Housing Types": "Affordable apartments, some villas (+1)",
+                "Average Rent (EUR/month)": 2000,
+                "Cost of Living Index": 60
+            },
+            "Amenities & Facilities": {
+                "Parks and Recreation": "Ras Al Khor Wildlife Sanctuary, limited parks (+2)",
+                "Healthcare Facilities": "Clinics nearby, distant hospitals (-1)"
+            },
+            "Community & Lifestyle": {
+                "Demographics": "Mixed expats, families (+1)",
+                "Family-Friendliness": "Moderately family-friendly (+1)",
+                "Safety Rating": 85
+            },
+            "Environment & Weather": {
+                "Green Spaces": "Wildlife sanctuary, limited green areas (+1)",
+                "Noise Levels": "Quiet, residential (+1)",
+                "Air Quality Index": 60
+            },
+            "Risk Factors": {
+                "Risk of Sandstorm": "Moderate (-1)",
+                "Risk of Apartment Flooding": "Low (+1)"
+            },
+            "Leisure & Entertainment": {
+                "Sports Facilities": "Local gyms, limited sports facilities (0)",
+                "Beach Access": "Distant (-2)"
+            },
+            "Total Score": 8
+        },{
+            "Area": "Al Safa",
+            "Location & Accessibility": {
+                "Proximity to Key Areas": "10-20 min to key areas (+3)",
+                "Traffic Conditions": "Moderate traffic (0)"
+            },
+            "Housing Options & Costs": {
+                "Available Housing Types": "Luxury villas, apartments (+2)",
+                "Average Rent (EUR/month)": 4000,
+                "Cost of Living Index": 85
+            },
+            "Amenities & Facilities": {
+                "Parks and Recreation": "Al Safa Park, community centers (+2)",
+                "Healthcare Facilities": "High-end hospitals and clinics (+3)"
+            },
+            "Community & Lifestyle": {
+                "Demographics": "Affluent expats, families (+2)",
+                "Family-Friendliness": "Highly family-friendly (+2)",
+                "Safety Rating": 95
+            },
+            "Environment & Weather": {
+                "Green Spaces": "Extensive parks (+2)",
+                "Noise Levels": "Quiet, residential (+2)",
+                "Air Quality Index": 65
+            },
+            "Risk Factors": {
+                "Risk of Sandstorm": "Low (+1)",
+                "Risk of Apartment Flooding": "Very low (+1)"
+            },
+            "Leisure & Entertainment": {
+                "Sports Facilities": "High-end sports facilities (+2)",
+                "Beach Access": "Nearby beaches (+3)"
+            },
+            "Total Score": 22
+        },{
+            "Area": "Al Satwa",
+            "Location & Accessibility": {
+                "Proximity to Key Areas": "10-20 min to key areas (+3)",
+                "Traffic Conditions": "Heavy traffic (-1)"
+            },
+            "Housing Options & Costs": {
+                "Available Housing Types": "Affordable apartments, villas (+1)",
+                "Average Rent (EUR/month)": 2500,
+                "Cost of Living Index": 65
+            },
+            "Amenities & Facilities": {
+                "Parks and Recreation": "Urban parks, limited green spaces (0)",
+                "Healthcare Facilities": "Clinics and hospitals nearby (+2)"
+            },
+            "Community & Lifestyle": {
+                "Demographics": "Mixed expats, workers (+1)",
+                "Family-Friendliness": "Moderately family-friendly (+1)",
+                "Safety Rating": 85
+            },
+            "Environment & Weather": {
+                "Green Spaces": "Limited, urban setting (0)",
+                "Noise Levels": "High due to traffic (-1)",
+                "Air Quality Index": 55
+            },
+            "Risk Factors": {
+                "Risk of Sandstorm": "Moderate (-1)",
+                "Risk of Apartment Flooding": "Low (+1)"
+            },
+            "Leisure & Entertainment": {
+                "Sports Facilities": "Local gyms, parks (+1)",
+                "Beach Access": "Distant (-2)"
+            },
+            "Total Score": 8
+        },{
+            "Area": "The Views",
+            "Location & Accessibility": {
+                "Proximity to Key Areas": "10-20 min to key areas (+3)",
+                "Traffic Conditions": "Moderate traffic (0)"
+            },
+            "Housing Options & Costs": {
+                "Available Housing Types": "Luxury apartments, some villas (+2)",
+                "Average Rent (EUR/month)": 3500,
+                "Cost of Living Index": 75
+            },
+            "Amenities & Facilities": {
+                "Parks and Recreation": "Community parks, lakeside amenities (+2)",
+                "Healthcare Facilities": "Clinics and hospitals nearby (+2)"
+            },
+            "Community & Lifestyle": {
+                "Demographics": "Affluent expats, families (+2)",
+                "Family-Friendliness": "Highly family-friendly (+2)",
+                "Safety Rating": 90
+            },
+            "Environment & Weather": {
+                "Green Spaces": "Well-maintained parks, lakes (+2)",
+                "Noise Levels": "Quiet, residential (+2)",
+                "Air Quality Index": 65
+            },
+            "Risk Factors": {
+                "Risk of Sandstorm": "Low (+1)",
+                "Risk of Apartment Flooding": "Low (+1)"
+            },
+            "Leisure & Entertainment": {
+                "Sports Facilities": "Local gyms, parks (+1)",
+                "Beach Access": "Distant (-2)"
+            },
+            "Total Score": 21
+        },{
+            "Area": "Town Square",
+            "Location & Accessibility": {
+                "Proximity to Key Areas": "25-35 min to key areas (0)",
+                "Traffic Conditions": "Moderate traffic (0)"
+            },
+            "Housing Options & Costs": {
+                "Available Housing Types": "Affordable apartments, townhouses (+1)",
+                "Average Rent (EUR/month)": 1500,
+                "Cost of Living Index": 55
+            },
+            "Amenities & Facilities": {
+                "Parks and Recreation": "Extensive parks, family-oriented amenities (+2)",
+                "Healthcare Facilities": "Clinics nearby, distant hospitals (-1)"
+            },
+            "Community & Lifestyle": {
+                "Demographics": "Mixed expats, families (+1)",
+                "Family-Friendliness": "Highly family-friendly (+2)",
+                "Safety Rating": 85
+            },
+            "Environment & Weather": {
+                "Green Spaces": "Extensive green areas (+2)",
+                "Noise Levels": "Quiet, suburban (+1)",
+                "Air Quality Index": 60
+            },
+            "Risk Factors": {
+                "Risk of Sandstorm": "Moderate (-1)",
+                "Risk of Apartment Flooding": "Very low (+1)"
+            },
+            "Leisure & Entertainment": {
+                "Sports Facilities": "Local gyms, parks (+1)",
+                "Beach Access": "Distant (-2)"
+            },
+            "Total Score": 12
+        },{
+            "Area": "The Hills",
+            "Location & Accessibility": {
+                "Proximity to Key Areas": "10-20 min to key areas (+3)",
+                "Traffic Conditions": "Moderate traffic (0)"
+            },
+            "Housing Options & Costs": {
+                "Available Housing Types": "Luxury apartments, villas (+2)",
+                "Average Rent (EUR/month)": 3800,
+                "Cost of Living Index": 80
+            },
+            "Amenities & Facilities": {
+                "Parks and Recreation": "Community parks, golf course (+3)",
+                "Healthcare Facilities": "High-end clinics and hospitals (+3)"
+            },
+            "Community & Lifestyle": {
+                "Demographics": "Affluent expats, families (+2)",
+                "Family-Friendliness": "Highly family-friendly (+2)",
+                "Safety Rating": 90
+            },
+            "Environment & Weather": {
+                "Green Spaces": "Extensive parks, golf course (+3)",
+                "Noise Levels": "Quiet, residential (+2)",
+                "Air Quality Index": 65
+            },
+            "Risk Factors": {
+                "Risk of Sandstorm": "Low (+1)",
+                "Risk of Apartment Flooding": "Low (+1)"
+            },
+            "Leisure & Entertainment": {
+                "Sports Facilities": "Golf, high-end sports facilities (+3)",
+                "Beach Access": "Distant (-2)"
+            },
+            "Total Score": 26
+        },{
+            "Area": "The Sustainable City",
+            "Location & Accessibility": {
+                "Proximity to Key Areas": "25-35 min to key areas (0)",
+                "Traffic Conditions": "Light traffic (+1)"
+            },
+            "Housing Options & Costs": {
+                "Available Housing Types": "Eco-friendly villas, townhouses (+2)",
+                "Average Rent (EUR/month)": 3000,
+                "Cost of Living Index": 75
+            },
+            "Amenities & Facilities": {
+                "Parks and Recreation": "Extensive green spaces, sustainable amenities (+3)",
+                "Healthcare Facilities": "Clinics nearby, distant hospitals (-1)"
+            },
+            "Community & Lifestyle": {
+                "Demographics": "Eco-conscious expats, families (+2)",
+                "Family-Friendliness": "Highly family-friendly (+2)",
+                "Safety Rating": 90
+            },
+            "Environment & Weather": {
+                "Green Spaces": "Extensive green areas, eco-friendly environment (+3)",
+                "Noise Levels": "Quiet, sustainable community (+2)",
+                "Air Quality Index": 70
+            },
+            "Risk Factors": {
+                "Risk of Sandstorm": "Low (+1)",
+                "Risk of Apartment Flooding": "Very low (+1)"
+            },
+            "Leisure & Entertainment": {
+                "Sports Facilities": "Eco-friendly sports facilities (+2)",
+                "Beach Access": "Distant (-2)"
+            },
+            "Total Score": 22
+        },{
+            "Area": "Dubai Maritime City",
+            "Location & Accessibility": {
+                "Proximity to Key Areas": "20-30 min to key areas (+1)",
+                "Traffic Conditions": "Moderate traffic (0)"
+            },
+            "Housing Options & Costs": {
+                "Available Housing Types": "Apartments, some villas (+1)",
+                "Average Rent (EUR/month)": 2500,
+                "Cost of Living Index": 65
+            },
+            "Amenities & Facilities": {
+                "Parks and Recreation": "Limited parks, waterfront setting (+1)",
+                "Healthcare Facilities": "Clinics and hospitals nearby (+2)"
+            },
+            "Community & Lifestyle": {
+                "Demographics": "Mixed expats, professionals (+1)",
+                "Family-Friendliness": "Moderately family-friendly (+1)",
+                "Safety Rating": 85
+            },
+            "Environment & Weather": {
+                "Green Spaces": "Limited green areas, urban setting (0)",
+                "Noise Levels": "High due to port activity (-1)",
+                "Air Quality Index": 55
+            },
+            "Risk Factors": {
+                "Risk of Sandstorm": "Moderate (-1)",
+                "Risk of Apartment Flooding": "Low (+1)"
+            },
+            "Leisure & Entertainment": {
+                "Sports Facilities": "Local gyms, waterfront activities (+1)",
+                "Beach Access": "Distant (-2)"
+            },
+            "Total Score": 5
+        },{
+            "Area": "Dubai Media City",
+            "Location & Accessibility": {
+                "Proximity to Key Areas": "10-20 min to key areas (+3)",
+                "Traffic Conditions": "Heavy traffic during peak hours (-1)"
+            },
+            "Housing Options & Costs": {
+                "Available Housing Types": "Luxury apartments, some villas (+2)",
+                "Average Rent (EUR/month)": 3500,
+                "Cost of Living Index": 75
+            },
+            "Amenities & Facilities": {
+                "Parks and Recreation": "Urban parks, media city amenities (+2)",
+                "Healthcare Facilities": "High-end clinics and hospitals (+3)"
+            },
+            "Community & Lifestyle": {
+                "Demographics": "Affluent expats, professionals (+2)",
+                "Family-Friendliness": "Moderately family-friendly (+1)",
+                "Safety Rating": 90
+            },
+            "Environment & Weather": {
+                "Green Spaces": "Well-maintained parks (+2)",
+                "Noise Levels": "High due to traffic (-1)",
+                "Air Quality Index": 60
+            },
+            "Risk Factors": {
+                "Risk of Sandstorm": "Low (+1)",
+                "Risk of Apartment Flooding": "Low (+1)"
+            },
+            "Leisure & Entertainment": {
+                "Sports Facilities": "High-end gyms, media city activities (+2)",
+                "Beach Access": "Nearby beaches (+2)"
+            },
+            "Total Score": 22
+        },{
+            "Area": "Dubai Production City (IMPZ)",
+            "Location & Accessibility": {
+                "Proximity to Key Areas": "25-35 min to key areas (0)",
+                "Traffic Conditions": "Moderate traffic (0)"
+            },
+            "Housing Options & Costs": {
+                "Available Housing Types": "Affordable apartments (+1)",
+                "Average Rent (EUR/month)": 1400,
+                "Cost of Living Index": 55
+            },
+            "Amenities & Facilities": {
+                "Parks and Recreation": "Limited parks, production city amenities (0)",
+                "Healthcare Facilities": "Few clinics, distant hospitals (-1)"
+            },
+            "Community & Lifestyle": {
+                "Demographics": "Mixed expats, workers (0)",
+                "Family-Friendliness": "Moderately family-friendly (0)",
+                "Safety Rating": 80
+            },
+            "Environment & Weather": {
+                "Green Spaces": "Minimal green areas, industrial setting (-1)",
+                "Noise Levels": "High due to industrial activity (-1)",
+                "Air Quality Index": 55
+            },
+            "Risk Factors": {
+                "Risk of Sandstorm": "High (-2)",
+                "Risk of Apartment Flooding": "Very low (+1)"
+            },
+            "Leisure & Entertainment": {
+                "Sports Facilities": "Local gyms, limited sports facilities (0)",
+                "Beach Access": "None (-3)"
+            },
+            "Total Score": -7
+        },{
+            "Area": "Dubai Residence Complex",
+            "Location & Accessibility": {
+                "Proximity to Key Areas": "25-35 min to key areas (0)",
+                "Traffic Conditions": "Moderate traffic (0)"
+            },
+            "Housing Options & Costs": {
+                "Available Housing Types": "Affordable apartments, some villas (+1)",
+                "Average Rent (EUR/month)": 1500,
+                "Cost of Living Index": 55
+            },
+            "Amenities & Facilities": {
+                "Parks and Recreation": "Limited parks, suburban setting (0)",
+                "Healthcare Facilities": "Few clinics, distant hospitals (-1)"
+            },
+            "Community & Lifestyle": {
+                "Demographics": "Mixed expats, families (+1)",
+                "Family-Friendliness": "Moderately family-friendly (+1)",
+                "Safety Rating": 80
+            },
+            "Environment & Weather": {
+                "Green Spaces": "Minimal green areas, suburban setting (0)",
+                "Noise Levels": "Quiet, residential (+1)",
+                "Air Quality Index": 60
+            },
+            "Risk Factors": {
+                "Risk of Sandstorm": "Moderate (-1)",
+                "Risk of Apartment Flooding": "Low (+1)"
+            },
+            "Leisure & Entertainment": {
+                "Sports Facilities": "Local gyms, limited sports facilities (0)",
+                "Beach Access": "Distant (-2)"
+            },
+            "Total Score": 3
+        },{
+            "Area": "Dubai Science Park",
+            "Location & Accessibility": {
+                "Proximity to Key Areas": "20-30 min to key areas (+1)",
+                "Traffic Conditions": "Moderate traffic (0)"
+            },
+            "Housing Options & Costs": {
+                "Available Housing Types": "Apartments, some villas (+1)",
+                "Average Rent (EUR/month)": 2200,
+                "Cost of Living Index": 60
+            },
+            "Amenities & Facilities": {
+                "Parks and Recreation": "Community parks, science park amenities (+1)",
+                "Healthcare Facilities": "Clinics and hospitals nearby (+2)"
+            },
+            "Community & Lifestyle": {
+                "Demographics": "Mixed expats, professionals (+1)",
+                "Family-Friendliness": "Moderately family-friendly (+1)",
+                "Safety Rating": 85
+            },
+            "Environment & Weather": {
+                "Green Spaces": "Limited green areas, urban setting (0)",
+                "Noise Levels": "Moderate due to nearby activity (0)",
+                "Air Quality Index": 60
+            },
+            "Risk Factors": {
+                "Risk of Sandstorm": "Moderate (-1)",
+                "Risk of Apartment Flooding": "Low (+1)"
+            },
+            "Leisure & Entertainment": {
+                "Sports Facilities": "Local gyms, community centers (+1)",
+                "Beach Access": "Distant (-2)"
+            },
+            "Total Score": 9
+        },{
+            "Area": "Dubai Silicon Oasis (DSO)",
+            "Location & Accessibility": {
+                "Proximity to Key Areas": "25-35 min to key areas (0)",
+                "Traffic Conditions": "Moderate traffic (0)"
+            },
+            "Housing Options & Costs": {
+                "Available Housing Types": "Affordable apartments, townhouses (+1)",
+                "Average Rent (EUR/month)": 1600,
+                "Cost of Living Index": 55
+            },
+            "Amenities & Facilities": {
+                "Parks and Recreation": "Community parks, tech park amenities (+1)",
+                "Healthcare Facilities": "Clinics and hospitals nearby (+2)"
+            },
+            "Community & Lifestyle": {
+                "Demographics": "Mixed expats, professionals (+1)",
+                "Family-Friendliness": "Moderately family-friendly (+1)",
+                "Safety Rating": 85
+            },
+            "Environment & Weather": {
+                "Green Spaces": "Limited green areas, tech setting (0)",
+                "Noise Levels": "Moderate due to tech activity (0)",
+                "Air Quality Index": 60
+            },
+            "Risk Factors": {
+                "Risk of Sandstorm": "Moderate (-1)",
+                "Risk of Apartment Flooding": "Low (+1)"
+            },
+            "Leisure & Entertainment": {
+                "Sports Facilities": "Local gyms, tech park amenities (+1)",
+                "Beach Access": "Distant (-2)"
+            },
+            "Total Score": 8
+        },{
+            "Area": "Dubai South",
+            "Location & Accessibility": {
+                "Proximity to Key Areas": "30-40 min to key areas (-1)",
+                "Traffic Conditions": "Light traffic (+1)"
+            },
+            "Housing Options & Costs": {
+                "Available Housing Types": "Affordable apartments, townhouses (+1)",
+                "Average Rent (EUR/month)": 1400,
+                "Cost of Living Index": 55
+            },
+            "Amenities & Facilities": {
+                "Parks and Recreation": "Community parks, limited amenities (0)",
+                "Healthcare Facilities": "Few clinics, distant hospitals (-1)"
+            },
+            "Community & Lifestyle": {
+                "Demographics": "Mixed expats, families (+1)",
+                "Family-Friendliness": "Moderately family-friendly (+1)",
+                "Safety Rating": 80
+            },
+            "Environment & Weather": {
+                "Green Spaces": "Limited green areas, suburban setting (0)",
+                "Noise Levels": "Quiet, suburban (+1)",
+                "Air Quality Index": 60
+            },
+            "Risk Factors": {
+                "Risk of Sandstorm": "Moderate (-1)",
+                "Risk of Apartment Flooding": "Low (+1)"
+            },
+            "Leisure & Entertainment": {
+                "Sports Facilities": "Local gyms, limited sports facilities (0)",
+                "Beach Access": "Distant (-2)"
+            },
+            "Total Score": 6
+        },{
+            "Area": "Dubai Sports City",
+            "Location & Accessibility": {
+                "Proximity to Key Areas": "20-30 min to key areas (+1)",
+                "Traffic Conditions": "Moderate traffic (0)"
+            },
+            "Housing Options & Costs": {
+                "Available Housing Types": "Apartments, townhouses (+1)",
+                "Average Rent (EUR/month)": 2000,
+                "Cost of Living Index": 60
+            },
+            "Amenities & Facilities": {
+                "Parks and Recreation": "Sports facilities, community parks (+2)",
+                "Healthcare Facilities": "Clinics and hospitals nearby (+2)"
+            },
+            "Community & Lifestyle": {
+                "Demographics": "Mixed expats, sports enthusiasts (+1)",
+                "Family-Friendliness": "Moderately family-friendly (+1)",
+                "Safety Rating": 85
+            },
+            "Environment & Weather": {
+                "Green Spaces": "Well-maintained parks (+1)",
+                "Noise Levels": "Moderate due to sports events (0)",
+                "Air Quality Index": 60
+            },
+            "Risk Factors": {
+                "Risk of Sandstorm": "Moderate (-1)",
+                "Risk of Apartment Flooding": "Low (+1)"
+            },
+            "Leisure & Entertainment": {
+                "Sports Facilities": "Extensive sports facilities (+3)",
+                "Beach Access": "Distant (-2)"
+            },
+            "Total Score": 14
+        },{
+            "Area": "Dubai Studio City",
+            "Location & Accessibility": {
+                "Proximity to Key Areas": "20-30 min to key areas (+1)",
+                "Traffic Conditions": "Moderate traffic (0)"
+            },
+            "Housing Options & Costs": {
+                "Available Housing Types": "Apartments, some villas (+1)",
+                "Average Rent (EUR/month)": 1800,
+                "Cost of Living Index": 60
+            },
+            "Amenities & Facilities": {
+                "Parks and Recreation": "Community parks, studio amenities (+1)",
+                "Healthcare Facilities": "Clinics nearby, distant hospitals (-1)"
+            },
+            "Community & Lifestyle": {
+                "Demographics": "Mixed expats, professionals (+1)",
+                "Family-Friendliness": "Moderately family-friendly (+1)",
+                "Safety Rating": 85
+            },
+            "Environment & Weather": {
+                "Green Spaces": "Limited green areas, studio setting (0)",
+                "Noise Levels": "Moderate due to studio activity (0)",
+                "Air Quality Index": 60
+            },
+            "Risk Factors": {
+                "Risk of Sandstorm": "Moderate (-1)",
+                "Risk of Apartment Flooding": "Low (+1)"
+            },
+            "Leisure & Entertainment": {
+                "Sports Facilities": "Local gyms, studio amenities (+1)",
+                "Beach Access": "Distant (-2)"
+            },
+            "Total Score": 8
+        },{
+            "Area": "Dubai Waterfront",
+            "Location & Accessibility": {
+                "Proximity to Key Areas": "30-40 min to key areas (-1)",
+                "Traffic Conditions": "Light traffic (+1)"
+            },
+            "Housing Options & Costs": {
+                "Available Housing Types": "Luxury waterfront apartments, villas (+2)",
+                "Average Rent (EUR/month)": 3800,
+                "Cost of Living Index": 80
+            },
+            "Amenities & Facilities": {
+                "Parks and Recreation": "Waterfront parks, luxury amenities (+3)",
+                "Healthcare Facilities": "Clinics nearby, distant hospitals (-1)"
+            },
+            "Community & Lifestyle": {
+                "Demographics": "Affluent expats, families (+2)",
+                "Family-Friendliness": "Highly family-friendly (+2)",
+                "Safety Rating": 90
+            },
+            "Environment & Weather": {
+                "Green Spaces": "Extensive waterfront parks (+2)",
+                "Noise Levels": "Quiet, residential (+2)",
+                "Air Quality Index": 65
+            },
+            "Risk Factors": {
+                "Risk of Sandstorm": "Low (+1)",
+                "Risk of Apartment Flooding": "Moderate due to waterfront location (0)"
+            },
+            "Leisure & Entertainment": {
+                "Sports Facilities": "High-end sports facilities (+2)",
+                "Beach Access": "Direct beach access (+3)"
+            },
+            "Total Score": 22
+        },{
+            "Area": "Green Community",
+            "Location & Accessibility": {
+                "Proximity to Key Areas": "25-35 min to key areas (0)",
+                "Traffic Conditions": "Moderate traffic (0)"
+            },
+            "Housing Options & Costs": {
+                "Available Housing Types": "Villas, townhouses, apartments (+2)",
+                "Average Rent (EUR/month)": 3200,
+                "Cost of Living Index": 75
+            },
+            "Amenities & Facilities": {
+                "Parks and Recreation": "Extensive parks, community amenities (+2)",
+                "Healthcare Facilities": "Clinics nearby, hospitals within reach (+1)"
+            },
+            "Community & Lifestyle": {
+                "Demographics": "Mixed expats, families (+2)",
+                "Family-Friendliness": "Highly family-friendly (+2)",
+                "Safety Rating": 90
+            },
+            "Environment & Weather": {
+                "Green Spaces": "Well-maintained parks and green areas (+2)",
+                "Noise Levels": "Quiet, residential (+2)",
+                "Air Quality Index": 65
+            },
+            "Risk Factors": {
+                "Risk of Sandstorm": "Moderate (-1)",
+                "Risk of Apartment Flooding": "Low (+1)"
+            },
+            "Leisure & Entertainment": {
+                "Sports Facilities": "Local gyms, parks (+1)",
+                "Beach Access": "Distant (-2)"
+            },
+            "Total Score": 19
+        },{
+            "Area": "Hadaeq Sheikh Mohammed Bin Rashid",
+            "Location & Accessibility": {
+                "Proximity to Key Areas": "15-25 min to key areas (+2)",
+                "Traffic Conditions": "Moderate traffic (0)"
+            },
+            "Housing Options & Costs": {
+                "Available Housing Types": "Luxury villas, townhouses (+2)",
+                "Average Rent (EUR/month)": 4500,
+                "Cost of Living Index": 85
+            },
+            "Amenities & Facilities": {
+                "Parks and Recreation": "Extensive parks, luxury amenities (+3)",
+                "Healthcare Facilities": "High-end clinics and hospitals (+3)"
+            },
+            "Community & Lifestyle": {
+                "Demographics": "Affluent expats, families (+2)",
+                "Family-Friendliness": "Highly family-friendly (+2)",
+                "Safety Rating": 95
+            },
+            "Environment & Weather": {
+                "Green Spaces": "Extensive parks and green areas (+3)",
+                "Noise Levels": "Quiet, residential (+2)",
+                "Air Quality Index": 70
+            },
+            "Risk Factors": {
+                "Risk of Sandstorm": "Low (+1)",
+                "Risk of Apartment Flooding": "Low (+1)"
+            },
+            "Leisure & Entertainment": {
+                "Sports Facilities": "High-end sports facilities (+2)",
+                "Beach Access": "Distant (-2)"
+            },
+            "Total Score": 25
+        },{
+            "Area": "International City",
+            "Location & Accessibility": {
+                "Proximity to Key Areas": "25-35 min to key areas (0)",
+                "Traffic Conditions": "Heavy traffic during peak hours (-1)"
+            },
+            "Housing Options & Costs": {
+                "Available Housing Types": "Affordable apartments (+1)",
+                "Average Rent (EUR/month)": 1200,
+                "Cost of Living Index": 50
+            },
+            "Amenities & Facilities": {
+                "Parks and Recreation": "Limited parks, community centers (0)",
+                "Healthcare Facilities": "Clinics nearby, distant hospitals (-1)"
+            },
+            "Community & Lifestyle": {
+                "Demographics": "Mixed expats, workers (0)",
+                "Family-Friendliness": "Moderately family-friendly (0)",
+                "Safety Rating": 75
+            },
+            "Environment & Weather": {
+                "Green Spaces": "Limited green areas, urban setting (0)",
+                "Noise Levels": "High due to traffic (-1)",
+                "Air Quality Index": 55
+            },
+            "Risk Factors": {
+                "Risk of Sandstorm": "Moderate (-1)",
+                "Risk of Apartment Flooding": "Low (+1)"
+            },
+            "Leisure & Entertainment": {
+                "Sports Facilities": "Local gyms, community centers (0)",
+                "Beach Access": "Distant (-2)"
+            },
+            "Total Score": -4
+        },{
+            "Area": "Jumeirah Beach Residence (JBR)",
+            "Location & Accessibility": {
+                "Proximity to Key Areas": "10-20 min to key areas (+3)",
+                "Traffic Conditions": "Heavy traffic during peak hours (-1)"
+            },
+            "Housing Options & Costs": {
+                "Available Housing Types": "Luxury apartments, beachfront properties (+3)",
+                "Average Rent (EUR/month)": 5000,
+                "Cost of Living Index": 90
+            },
+            "Amenities & Facilities": {
+                "Parks and Recreation": "Beachfront parks, luxury amenities (+3)",
+                "Healthcare Facilities": "High-end clinics and hospitals (+3)"
+            },
+            "Community & Lifestyle": {
+                "Demographics": "Affluent expats, families (+2)",
+                "Family-Friendliness": "Highly family-friendly (+2)",
+                "Safety Rating": 90
+            },
+            "Environment & Weather": {
+                "Green Spaces": "Extensive beachfront parks (+3)",
+                "Noise Levels": "Moderate due to beachfront activities (0)",
+                "Air Quality Index": 65
+            },
+            "Risk Factors": {
+                "Risk of Sandstorm": "Low (+1)",
+                "Risk of Apartment Flooding": "Moderate due to coastal location (0)"
+            },
+            "Leisure & Entertainment": {
+                "Sports Facilities": "High-end sports facilities (+2)",
+                "Beach Access": "Direct beach access (+3)"
+            },
+            "Total Score": 24
+        },{
+            "Area": "Jumeirah Golf Estates",
+            "Location & Accessibility": {
+                "Proximity to Key Areas": "20-30 min to key areas (+1)",
+                "Traffic Conditions": "Moderate traffic (0)"
+            },
+            "Housing Options & Costs": {
+                "Available Housing Types": "Luxury villas, townhouses (+3)",
+                "Average Rent (EUR/month)": 4500,
+                "Cost of Living Index": 85
+            },
+            "Amenities & Facilities": {
+                "Parks and Recreation": "Extensive golf courses, luxury amenities (+3)",
+                "Healthcare Facilities": "High-end clinics and hospitals (+3)"
+            },
+            "Community & Lifestyle": {
+                "Demographics": "Affluent expats, golf enthusiasts (+2)",
+                "Family-Friendliness": "Highly family-friendly (+2)",
+                "Safety Rating": 95
+            },
+            "Environment & Weather": {
+                "Green Spaces": "Extensive golf courses and parks (+3)",
+                "Noise Levels": "Quiet, residential (+2)",
+                "Air Quality Index": 70
+            },
+            "Risk Factors": {
+                "Risk of Sandstorm": "Low (+1)",
+                "Risk of Apartment Flooding": "Low (+1)"
+            },
+            "Leisure & Entertainment": {
+                "Sports Facilities": "Golf, high-end sports facilities (+3)",
+                "Beach Access": "Distant (-2)"
+            },
+            "Total Score": 25
+        },{
+            "Area": "Jumeirah Heights",
+            "Location & Accessibility": {
+                "Proximity to Key Areas": "20-30 min to key areas (+1)",
+                "Traffic Conditions": "Moderate traffic (0)"
+            },
+            "Housing Options & Costs": {
+                "Available Housing Types": "Luxury apartments, townhouses (+2)",
+                "Average Rent (EUR/month)": 4000,
+                "Cost of Living Index": 80
+            },
+            "Amenities & Facilities": {
+                "Parks and Recreation": "Community parks, luxury amenities (+2)",
+                "Healthcare Facilities": "Clinics and hospitals nearby (+2)"
+            },
+            "Community & Lifestyle": {
+                "Demographics": "Affluent expats, families (+2)",
+                "Family-Friendliness": "Highly family-friendly (+2)",
+                "Safety Rating": 90
+            },
+            "Environment & Weather": {
+                "Green Spaces": "Well-maintained parks (+2)",
+                "Noise Levels": "Quiet, residential (+2)",
+                "Air Quality Index": 65
+            },
+            "Risk Factors": {
+                "Risk of Sandstorm": "Low (+1)",
+                "Risk of Apartment Flooding": "Low (+1)"
+            },
+            "Leisure & Entertainment": {
+                "Sports Facilities": "Local gyms, parks (+1)",
+                "Beach Access": "Distant (-2)"
+            },
+            "Total Score": 20
+        },{
+            "Area": "Jumeirah Lake Towers (JLT)",
+            "Location & Accessibility": {
+                "Proximity to Key Areas": "15-25 min to key areas (+2)",
+                "Traffic Conditions": "Heavy traffic during peak hours (-1)"
+            },
+            "Housing Options & Costs": {
+                "Available Housing Types": "Luxury apartments, some townhouses (+2)",
+                "Average Rent (EUR/month)": 3500,
+                "Cost of Living Index": 75
+            },
+            "Amenities & Facilities": {
+                "Parks and Recreation": "Lakeside parks, luxury amenities (+2)",
+                "Healthcare Facilities": "Clinics and hospitals nearby (+2)"
+            },
+            "Community & Lifestyle": {
+                "Demographics": "Affluent expats, professionals (+2)",
+                "Family-Friendliness": "Moderately family-friendly (+1)",
+                "Safety Rating": 90
+            },
+            "Environment & Weather": {
+                "Green Spaces": "Well-maintained parks, lakes (+2)",
+                "Noise Levels": "Moderate due to traffic (0)",
+                "Air Quality Index": 60
+            },
+            "Risk Factors": {
+                "Risk of Sandstorm": "Low (+1)",
+                "Risk of Apartment Flooding": "Low (+1)"
+            },
+            "Leisure & Entertainment": {
+                "Sports Facilities": "Local gyms, parks (+1)",
+                "Beach Access": "Distant (-2)"
+            },
+            "Total Score": 17
+        },{
+            "Area": "Jumeirah Village Circle (JVC)",
+            "Location & Accessibility": {
+                "Proximity to Key Areas": "20-30 min to key areas (+1)",
+                "Traffic Conditions": "Moderate traffic (0)"
+            },
+            "Housing Options & Costs": {
+                "Available Housing Types": "Affordable apartments, townhouses (+1)",
+                "Average Rent (EUR/month)": 1800,
+                "Cost of Living Index": 60
+            },
+            "Amenities & Facilities": {
+                "Parks and Recreation": "Community parks, suburban amenities (+1)",
+                "Healthcare Facilities": "Clinics and hospitals nearby (+2)"
+            },
+            "Community & Lifestyle": {
+                "Demographics": "Mixed expats, families (+1)",
+                "Family-Friendliness": "Highly family-friendly (+2)",
+                "Safety Rating": 85
+            },
+            "Environment & Weather": {
+                "Green Spaces": "Well-maintained parks (+1)",
+                "Noise Levels": "Quiet, residential (+1)",
+                "Air Quality Index": 60
+            },
+            "Risk Factors": {
+                "Risk of Sandstorm": "Moderate (-1)",
+                "Risk of Apartment Flooding": "Low (+1)"
+            },
+            "Leisure & Entertainment": {
+                "Sports Facilities": "Local gyms, parks (+1)",
+                "Beach Access": "Distant (-2)"
+            },
+            "Total Score": 11
+        },{
+            "Area": "Wasl Gate",
+            "Location & Accessibility": {
+                "Proximity to Key Areas": "20-30 min to key areas (+1)",
+                "Traffic Conditions": "Moderate traffic (0)"
+            },
+            "Housing Options & Costs": {
+                "Available Housing Types": "Apartments, townhouses (+1)",
+                "Average Rent (EUR/month)": 2200,
+                "Cost of Living Index": 60
+            },
+            "Amenities & Facilities": {
+                "Parks and Recreation": "Community parks, suburban amenities (+1)",
+                "Healthcare Facilities": "Clinics nearby, distant hospitals (-1)"
+            },
+            "Community & Lifestyle": {
+                "Demographics": "Mixed expats, families (+1)",
+                "Family-Friendliness": "Highly family-friendly (+2)",
+                "Safety Rating": 85
+            },
+            "Environment & Weather": {
+                "Green Spaces": "Well-maintained parks (+1)",
+                "Noise Levels": "Quiet, residential (+1)",
+                "Air Quality Index": 60
+            },
+            "Risk Factors": {
+                "Risk of Sandstorm": "Moderate (-1)",
+                "Risk of Apartment Flooding": "Low (+1)"
+            },
+            "Leisure & Entertainment": {
+                "Sports Facilities": "Local gyms, parks (+1)",
+                "Beach Access": "Distant (-2)"
+            },
+            "Total Score": 9
+        },{
+            "Area": "Za'abeel",
+            "Location & Accessibility": {
+                "Proximity to Key Areas": "10-20 min to key areas (+3)",
+                "Traffic Conditions": "Moderate traffic (0)"
+            },
+            "Housing Options & Costs": {
+                "Available Housing Types": "Luxury apartments, villas (+2)",
+                "Average Rent (EUR/month)": 4000,
+                "Cost of Living Index": 80
+            },
+            "Amenities & Facilities": {
+                "Parks and Recreation": "Zabeel Park, luxury amenities (+3)",
+                "Healthcare Facilities": "High-end clinics and hospitals (+3)"
+            },
+            "Community & Lifestyle": {
+                "Demographics": "Affluent expats, professionals (+2)",
+                "Family-Friendliness": "Highly family-friendly (+2)",
+                "Safety Rating": 95
+            },
+            "Environment & Weather": {
+                "Green Spaces": "Extensive parks (+2)",
+                "Noise Levels": "Quiet, residential (+2)",
+                "Air Quality Index": 70
+            },
+            "Risk Factors": {
+                "Risk of Sandstorm": "Low (+1)",
+                "Risk of Apartment Flooding": "Low (+1)"
+            },
+            "Leisure & Entertainment": {
+                "Sports Facilities": "High-end sports facilities (+2)",
+                "Beach Access": "Distant (-2)"
+            },
+            "Total Score": 25
+        },{
+            "Area": "Umm Al Sheif",
+            "Location & Accessibility": {
+                "Proximity to Key Areas": "15-25 min to key areas (+2)",
+                "Traffic Conditions": "Moderate traffic (0)"
+            },
+            "Housing Options & Costs": {
+                "Available Housing Types": "Luxury villas, apartments (+2)",
+                "Average Rent (EUR/month)": 3800,
+                "Cost of Living Index": 80
+            },
+            "Amenities & Facilities": {
+                "Parks and Recreation": "Community parks, luxury amenities (+2)",
+                "Healthcare Facilities": "Clinics nearby, hospitals within reach (+2)"
+            },
+            "Community & Lifestyle": {
+                "Demographics": "Affluent expats, families (+2)",
+                "Family-Friendliness": "Highly family-friendly (+2)",
+                "Safety Rating": 90
+            },
+            "Environment & Weather": {
+                "Green Spaces": "Well-maintained parks (+2)",
+                "Noise Levels": "Quiet, residential (+2)",
+                "Air Quality Index": 65
+            },
+            "Risk Factors": {
+                "Risk of Sandstorm": "Low (+1)",
+                "Risk of Apartment Flooding": "Low (+1)"
+            },
+            "Leisure & Entertainment": {
+                "Sports Facilities": "Local gyms, parks (+1)",
+                "Beach Access": "Nearby beaches (+3)"
+            },
+            "Total Score": 22
+        },{
+            "Area": "Umm Ramool",
+            "Location & Accessibility": {
+                "Proximity to Key Areas": "20-30 min to key areas (+1)",
+                "Traffic Conditions": "Heavy traffic during peak hours (-1)"
+            },
+            "Housing Options & Costs": {
+                "Available Housing Types": "Affordable apartments, some villas (+1)",
+                "Average Rent (EUR/month)": 2200,
+                "Cost of Living Index": 60
+            },
+            "Amenities & Facilities": {
+                "Parks and Recreation": "Limited parks, urban setting (0)",
+                "Healthcare Facilities": "Clinics nearby, distant hospitals (-1)"
+            },
+            "Community & Lifestyle": {
+                "Demographics": "Mixed expats, workers (0)",
+                "Family-Friendliness": "Moderately family-friendly (+1)",
+                "Safety Rating": 80
+            },
+            "Environment & Weather": {
+                "Green Spaces": "Limited green areas (0)",
+                "Noise Levels": "High due to traffic (-1)",
+                "Air Quality Index": 55
+            },
+            "Risk Factors": {
+                "Risk of Sandstorm": "Moderate (-1)",
+                "Risk of Apartment Flooding": "Low (+1)"
+            },
+            "Leisure & Entertainment": {
+                "Sports Facilities": "Local gyms, limited sports facilities (0)",
+                "Beach Access": "Distant (-2)"
+            },
+            "Total Score": 1
+        },{
+            "Area": "Sobha Hartland",
+            "Location & Accessibility": {
+                "Proximity to Key Areas": "15-25 min to key areas (+2)",
+                "Traffic Conditions": "Moderate traffic (0)"
+            },
+            "Housing Options & Costs": {
+                "Available Housing Types": "Luxury villas, apartments (+3)",
+                "Average Rent (EUR/month)": 4500,
+                "Cost of Living Index": 85
+            },
+            "Amenities & Facilities": {
+                "Parks and Recreation": "Extensive parks, luxury amenities (+3)",
+                "Healthcare Facilities": "High-end clinics and hospitals (+3)"
+            },
+            "Community & Lifestyle": {
+                "Demographics": "Affluent expats, families (+2)",
+                "Family-Friendliness": "Highly family-friendly (+2)",
+                "Safety Rating": 95
+            },
+            "Environment & Weather": {
+                "Green Spaces": "Extensive parks (+3)",
+                "Noise Levels": "Quiet, residential (+2)",
+                "Air Quality Index": 70
+            },
+            "Risk Factors": {
+                "Risk of Sandstorm": "Low (+1)",
+                "Risk of Apartment Flooding": "Low (+1)"
+            },
+            "Leisure & Entertainment": {
+                "Sports Facilities": "High-end sports facilities (+2)",
+                "Beach Access": "Distant (-2)"
+            },
+            "Total Score": 27
+        },{
+            "Area": "Remraam",
+            "Location & Accessibility": {
+                "Proximity to Key Areas": "25-35 min to key areas (0)",
+                "Traffic Conditions": "Moderate traffic (0)"
+            },
+            "Housing Options & Costs": {
+                "Available Housing Types": "Affordable apartments, townhouses (+1)",
+                "Average Rent (EUR/month)": 1500,
+                "Cost of Living Index": 55
+            },
+            "Amenities & Facilities": {
+                "Parks and Recreation": "Community parks, suburban amenities (+1)",
+                "Healthcare Facilities": "Clinics nearby, distant hospitals (-1)"
+            },
+            "Community & Lifestyle": {
+                "Demographics": "Mixed expats, families (+1)",
+                "Family-Friendliness": "Highly family-friendly (+2)",
+                "Safety Rating": 85
+            },
+            "Environment & Weather": {
+                "Green Spaces": "Well-maintained parks (+1)",
+                "Noise Levels": "Quiet, residential (+1)",
+                "Air Quality Index": 60
+            },
+            "Risk Factors": {
+                "Risk of Sandstorm": "Moderate (-1)",
+                "Risk of Apartment Flooding": "Low (+1)"
+            },
+            "Leisure & Entertainment": {
+                "Sports Facilities": "Local gyms, parks (+1)",
+                "Beach Access": "Distant (-2)"
+            },
+            "Total Score": 8
+        },{
+            "Area": "Sheikh Zayed Road",
+            "Location & Accessibility": {
+                "Proximity to Key Areas": "10-20 min to key areas (+3)",
+                "Traffic Conditions": "Heavy traffic during peak hours (-1)"
+            },
+            "Housing Options & Costs": {
+                "Available Housing Types": "Luxury apartments, some penthouses (+3)",
+                "Average Rent (EUR/month)": 4500,
+                "Cost of Living Index": 85
+            },
+            "Amenities & Facilities": {
+                "Parks and Recreation": "Urban parks, luxury amenities (+2)",
+                "Healthcare Facilities": "High-end clinics and hospitals (+3)"
+            },
+            "Community & Lifestyle": {
+                "Demographics": "Affluent expats, professionals (+2)",
+                "Family-Friendliness": "Moderately family-friendly (+1)",
+                "Safety Rating": 90
+            },
+            "Environment & Weather": {
+                "Green Spaces": "Limited, urban setting (0)",
+                "Noise Levels": "High due to traffic (-1)",
+                "Air Quality Index": 55
+            },
+            "Risk Factors": {
+                "Risk of Sandstorm": "Low (+1)",
+                "Risk of Apartment Flooding": "Low (+1)"
+            },
+            "Leisure & Entertainment": {
+                "Sports Facilities": "High-end gyms, urban amenities (+2)",
+                "Beach Access": "Distant (-2)"
+            },
+            "Total Score": 20
+        },{
+            "Area": "Muhaisnah",
+            "Location & Accessibility": {
+                "Proximity to Key Areas": "20-30 min to key areas (+1)",
+                "Traffic Conditions": "Heavy traffic during peak hours (-1)"
+            },
+            "Housing Options & Costs": {
+                "Available Housing Types": "Affordable apartments, worker accommodations (+1)",
+                "Average Rent (EUR/month)": 1400,
+                "Cost of Living Index": 55
+            },
+            "Amenities & Facilities": {
+                "Parks and Recreation": "Limited parks, urban setting (0)",
+                "Healthcare Facilities": "Clinics and hospitals nearby (+2)"
+            },
+            "Community & Lifestyle": {
+                "Demographics": "Mixed expats, workers (0)",
+                "Family-Friendliness": "Moderately family-friendly (+1)",
+                "Safety Rating": 80
+            },
+            "Environment & Weather": {
+                "Green Spaces": "Limited green areas, urban setting (0)",
+                "Noise Levels": "High due to traffic (-1)",
+                "Air Quality Index": 55
+            },
+            "Risk Factors": {
+                "Risk of Sandstorm": "Moderate (-1)",
+                "Risk of Apartment Flooding": "Low (+1)"
+            },
+            "Leisure & Entertainment": {
+                "Sports Facilities": "Local gyms, limited sports facilities (0)",
+                "Beach Access": "Distant (-2)"
+            },
+            "Total Score": 4
+        },{
+            "Area": "Nad Al Sheba",
+            "Location & Accessibility": {
+                "Proximity to Key Areas": "20-30 min to key areas (+1)",
+                "Traffic Conditions": "Moderate traffic (0)"
+            },
+            "Housing Options & Costs": {
+                "Available Housing Types": "Luxury villas, some townhouses (+3)",
+                "Average Rent (EUR/month)": 3800,
+                "Cost of Living Index": 80
+            },
+            "Amenities & Facilities": {
+                "Parks and Recreation": "Extensive parks, luxury amenities (+3)",
+                "Healthcare Facilities": "High-end clinics and hospitals (+3)"
+            },
+            "Community & Lifestyle": {
+                "Demographics": "Affluent expats, families (+2)",
+                "Family-Friendliness": "Highly family-friendly (+2)",
+                "Safety Rating": 90
+            },
+            "Environment & Weather": {
+                "Green Spaces": "Well-maintained parks (+2)",
+                "Noise Levels": "Quiet, residential (+2)",
+                "Air Quality Index": 65
+            },
+            "Risk Factors": {
+                "Risk of Sandstorm": "Low (+1)",
+                "Risk of Apartment Flooding": "Low (+1)"
+            },
+            "Leisure & Entertainment": {
+                "Sports Facilities": "Local gyms, luxury amenities (+2)",
+                "Beach Access": "Distant (-2)"
+            },
+            "Total Score": 25
+        },{
+            "Area": "Motor City",
+            "Location & Accessibility": {
+                "Proximity to Key Areas": "20-30 min to key areas (+1)",
+                "Traffic Conditions": "Moderate traffic (0)"
+            },
+            "Housing Options & Costs": {
+                "Available Housing Types": "Apartments, townhouses, villas (+2)",
+                "Average Rent (EUR/month)": 2500,
+                "Cost of Living Index": 65
+            },
+            "Amenities & Facilities": {
+                "Parks and Recreation": "Community parks, sports facilities (+2)",
+                "Healthcare Facilities": "Clinics and hospitals nearby (+2)"
+            },
+            "Community & Lifestyle": {
+                "Demographics": "Mixed expats, families (+1)",
+                "Family-Friendliness": "Highly family-friendly (+2)",
+                "Safety Rating": 85
+            },
+            "Environment & Weather": {
+                "Green Spaces": "Well-maintained parks (+1)",
+                "Noise Levels": "Quiet, residential (+1)",
+                "Air Quality Index": 60
+            },
+            "Risk Factors": {
+                "Risk of Sandstorm": "Moderate (-1)",
+                "Risk of Apartment Flooding": "Low (+1)"
+            },
+            "Leisure & Entertainment": {
+                "Sports Facilities": "Extensive sports facilities (+3)",
+                "Beach Access": "Distant (-2)"
+            },
+            "Total Score": 16
+        },{
+            "Area": "Mudon",
+            "Location & Accessibility": {
+                "Proximity to Key Areas": "25-35 min to key areas (0)",
+                "Traffic Conditions": "Light traffic (+1)"
+            },
+            "Housing Options & Costs": {
+                "Available Housing Types": "Villas, townhouses (+2)",
+                "Average Rent (EUR/month)": 3000,
+                "Cost of Living Index": 70
+            },
+            "Amenities & Facilities": {
+                "Parks and Recreation": "Extensive parks, community amenities (+2)",
+                "Healthcare Facilities": "Clinics and hospitals nearby (+2)"
+            },
+            "Community & Lifestyle": {
+                "Demographics": "Mixed expats, families (+1)",
+                "Family-Friendliness": "Highly family-friendly (+2)",
+                "Safety Rating": 85
+            },
+            "Environment & Weather": {
+                "Green Spaces": "Well-maintained parks (+1)",
+                "Noise Levels": "Quiet, residential (+1)",
+                "Air Quality Index": 60
+            },
+            "Risk Factors": {
+                "Risk of Sandstorm": "Moderate (-1)",
+                "Risk of Apartment Flooding": "Low (+1)"
+            },
+            "Leisure & Entertainment": {
+                "Sports Facilities": "Local gyms, community parks (+1)",
+                "Beach Access": "Distant (-2)"
+            },
+            "Total Score": 14
+        },{
+            "Area": "Mirdif",
+            "Location & Accessibility": {
+                "Proximity to Key Areas": "20-30 min to key areas (+1)",
+                "Traffic Conditions": "Moderate traffic (0)"
+            },
+            "Housing Options & Costs": {
+                "Available Housing Types": "Villas, townhouses, some apartments (+2)",
+                "Average Rent (EUR/month)": 2500,
+                "Cost of Living Index": 65
+            },
+            "Amenities & Facilities": {
+                "Parks and Recreation": "Community parks, suburban amenities (+1)",
+                "Healthcare Facilities": "Clinics and hospitals nearby (+2)"
+            },
+            "Community & Lifestyle": {
+                "Demographics": "Mixed expats, families (+1)",
+                "Family-Friendliness": "Highly family-friendly (+2)",
+                "Safety Rating": 85
+            },
+            "Environment & Weather": {
+                "Green Spaces": "Well-maintained parks (+1)",
+                "Noise Levels": "Quiet, residential (+1)",
+                "Air Quality Index": 60
+            },
+            "Risk Factors": {
+                "Risk of Sandstorm": "Moderate (-1)",
+                "Risk of Apartment Flooding": "Low (+1)"
+            },
+            "Leisure & Entertainment": {
+                "Sports Facilities": "Local gyms, community parks (+1)",
+                "Beach Access": "Distant (-2)"
+            },
+            "Total Score": 12
+        },{
+            "Area": "Mohammed Bin Rashid City",
+            "Location & Accessibility": {
+                "Proximity to Key Areas": "15-25 min to key areas (+2)",
+                "Traffic Conditions": "Moderate traffic (0)"
+            },
+            "Housing Options & Costs": {
+                "Available Housing Types": "Luxury villas, townhouses, apartments (+3)",
+                "Average Rent (EUR/month)": 4500,
+                "Cost of Living Index": 85
+            },
+            "Amenities & Facilities": {
+                "Parks and Recreation": "Extensive parks, luxury amenities (+3)",
+                "Healthcare Facilities": "High-end clinics and hospitals (+3)"
+            },
+            "Community & Lifestyle": {
+                "Demographics": "Affluent expats, families (+2)",
+                "Family-Friendliness": "Highly family-friendly (+2)",
+                "Safety Rating": 95
+            },
+            "Environment & Weather": {
+                "Green Spaces": "Extensive parks (+3)",
+                "Noise Levels": "Quiet, residential (+2)",
+                "Air Quality Index": 70
+            },
+            "Risk Factors": {
+                "Risk of Sandstorm": "Low (+1)",
+                "Risk of Apartment Flooding": "Low (+1)"
+            },
+            "Leisure & Entertainment": {
+                "Sports Facilities": "High-end sports facilities (+2)",
+                "Beach Access": "Distant (-2)"
+            },
+            "Total Score": 26
+        },{
+            "Area": "Me'aisem 1",
+            "Location & Accessibility": {
+                "Proximity to Key Areas": "25-35 min to key areas (0)",
+                "Traffic Conditions": "Moderate traffic (0)"
+            },
+            "Housing Options & Costs": {
+                "Available Housing Types": "Affordable apartments (+1)",
+                "Average Rent (EUR/month)": 1500,
+                "Cost of Living Index": 55
+            },
+            "Amenities & Facilities": {
+                "Parks and Recreation": "Community parks, suburban amenities (+1)",
+                "Healthcare Facilities": "Clinics nearby, distant hospitals (-1)"
+            },
+            "Community & Lifestyle": {
+                "Demographics": "Mixed expats, families (+1)",
+                "Family-Friendliness": "Highly family-friendly (+2)",
+                "Safety Rating": 85
+            },
+            "Environment & Weather": {
+                "Green Spaces": "Well-maintained parks (+1)",
+                "Noise Levels": "Quiet, residential (+1)",
+                "Air Quality Index": 60
+            },
+            "Risk Factors": {
+                "Risk of Sandstorm": "Moderate (-1)",
+                "Risk of Apartment Flooding": "Low (+1)"
+            },
+            "Leisure & Entertainment": {
+                "Sports Facilities": "Local gyms, parks (+1)",
+                "Beach Access": "Distant (-2)"
+            },
+            "Total Score": 7
+        },{
+            "Area": "Meydan City",
+            "Location & Accessibility": {
+                "Proximity to Key Areas": "15-25 min to key areas (+2)",
+                "Traffic Conditions": "Moderate traffic (0)"
+            },
+            "Housing Options & Costs": {
+                "Available Housing Types": "Luxury villas, townhouses, apartments (+3)",
+                "Average Rent (EUR/month)": 4500,
+                "Cost of Living Index": 85
+            },
+            "Amenities & Facilities": {
+                "Parks and Recreation": "Extensive parks, luxury amenities (+3)",
+                "Healthcare Facilities": "High-end clinics and hospitals (+3)"
+            },
+            "Community & Lifestyle": {
+                "Demographics": "Affluent expats, families (+2)",
+                "Family-Friendliness": "Highly family-friendly (+2)",
+                "Safety Rating": 95
+            },
+            "Environment & Weather": {
+                "Green Spaces": "Extensive parks (+3)",
+                "Noise Levels": "Quiet, residential (+2)",
+                "Air Quality Index": 70
+            },
+            "Risk Factors": {
+                "Risk of Sandstorm": "Low (+1)",
+                "Risk of Apartment Flooding": "Low (+1)"
+            },
+            "Leisure & Entertainment": {
+                "Sports Facilities": "High-end sports facilities (+2)",
+                "Beach Access": "Distant (-2)"
+            },
+            "Total Score": 26
+        },{
+            "Area": "Liwan",
+            "Location & Accessibility": {
+                "Proximity to Key Areas": "25-35 min to key areas (0)",
+                "Traffic Conditions": "Moderate traffic (0)"
+            },
+            "Housing Options & Costs": {
+                "Available Housing Types": "Affordable apartments, townhouses (+1)",
+                "Average Rent (EUR/month)": 1400,
+                "Cost of Living Index": 55
+            },
+            "Amenities & Facilities": {
+                "Parks and Recreation": "Community parks, suburban amenities (+1)",
+                "Healthcare Facilities": "Clinics nearby, distant hospitals (-1)"
+            },
+            "Community & Lifestyle": {
+                "Demographics": "Mixed expats, families (+1)",
+                "Family-Friendliness": "Highly family-friendly (+2)",
+                "Safety Rating": 80
+            },
+            "Environment & Weather": {
+                "Green Spaces": "Well-maintained parks (+1)",
+                "Noise Levels": "Quiet, residential (+1)",
+                "Air Quality Index": 60
+            },
+            "Risk Factors": {
+                "Risk of Sandstorm": "Moderate (-1)",
+                "Risk of Apartment Flooding": "Low (+1)"
+            },
+            "Leisure & Entertainment": {
+                "Sports Facilities": "Local gyms, parks (+1)",
+                "Beach Access": "Distant (-2)"
+            },
+            "Total Score": 7
+        },{
+            "Area": "Majan",
+            "Location & Accessibility": {
+                "Proximity to Key Areas": "20-30 min to key areas (+1)",
+                "Traffic Conditions": "Moderate traffic (0)"
+            },
+            "Housing Options & Costs": {
+                "Available Housing Types": "Apartments, some villas (+1)",
+                "Average Rent (EUR/month)": 2000,
+                "Cost of Living Index": 60
+            },
+            "Amenities & Facilities": {
+                "Parks and Recreation": "Limited parks, suburban amenities (0)",
+                "Healthcare Facilities": "Clinics nearby, distant hospitals (-1)"
+            },
+            "Community & Lifestyle": {
+                "Demographics": "Mixed expats, families (+1)",
+                "Family-Friendliness": "Moderately family-friendly (+1)",
+                "Safety Rating": 80
+            },
+            "Environment & Weather": {
+                "Green Spaces": "Limited green areas (0)",
+                "Noise Levels": "Quiet, residential (+1)",
+                "Air Quality Index": 60
+            },
+            "Risk Factors": {
+                "Risk of Sandstorm": "Moderate (-1)",
+                "Risk of Apartment Flooding": "Low (+1)"
+            },
+            "Leisure & Entertainment": {
+                "Sports Facilities": "Local gyms, limited amenities (0)",
+                "Beach Access": "Distant (-2)"
+            },
+            "Total Score": 3
+        },{
+            "Area": "Jumeirah Village Triangle (JVT)",
+            "Location & Accessibility": {
+                "Proximity to Key Areas": "20-30 min to key areas (+1)",
+                "Traffic Conditions": "Moderate traffic (0)"
+            },
+            "Housing Options & Costs": {
+                "Available Housing Types": "Affordable apartments, townhouses (+1)",
+                "Average Rent (EUR/month)": 1800,
+                "Cost of Living Index": 60
+            },
+            "Amenities & Facilities": {
+                "Parks and Recreation": "Community parks, suburban amenities (+1)",
+                "Healthcare Facilities": "Clinics nearby, distant hospitals (-1)"
+            },
+            "Community & Lifestyle": {
+                "Demographics": "Mixed expats, families (+1)",
+                "Family-Friendliness": "Highly family-friendly (+2)",
+                "Safety Rating": 85
+            },
+            "Environment & Weather": {
+                "Green Spaces": "Well-maintained parks (+1)",
+                "Noise Levels": "Quiet, residential (+1)",
+                "Air Quality Index": 60
+            },
+            "Risk Factors": {
+                "Risk of Sandstorm": "Moderate (-1)",
+                "Risk of Apartment Flooding": "Low (+1)"
+            },
+            "Leisure & Entertainment": {
+                "Sports Facilities": "Local gyms, parks (+1)",
+                "Beach Access": "Distant (-2)"
+            },
+            "Total Score": 8
+        },{
+            "Area": "Living Legends",
+            "Location & Accessibility": {
+                "Proximity to Key Areas": "25-35 min to key areas (0)",
+                "Traffic Conditions": "Light traffic (+1)"
+            },
+            "Housing Options & Costs": {
+                "Available Housing Types": "Villas, townhouses (+2)",
+                "Average Rent (EUR/month)": 2800,
+                "Cost of Living Index": 70
+            },
+            "Amenities & Facilities": {
+                "Parks and Recreation": "Extensive parks, golf course (+2)",
+                "Healthcare Facilities": "Clinics and hospitals nearby (+2)"
+            },
+            "Community & Lifestyle": {
+                "Demographics": "Mixed expats, families (+1)",
+                "Family-Friendliness": "Highly family-friendly (+2)",
+                "Safety Rating": 85
+            },
+            "Environment & Weather": {
+                "Green Spaces": "Well-maintained parks, golf course (+2)",
+                "Noise Levels": "Quiet, residential (+1)",
+                "Air Quality Index": 65
+            },
+            "Risk Factors": {
+                "Risk of Sandstorm": "Moderate (-1)",
+                "Risk of Apartment Flooding": "Low (+1)"
+            },
+            "Leisure & Entertainment": {
+                "Sports Facilities": "Local gyms, golf facilities (+1)",
+                "Beach Access": "Distant (-2)"
+            },
+            "Total Score": 19
+        }
+    ]
+}
