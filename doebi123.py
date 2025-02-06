@@ -177,37 +177,24 @@ with tab4:
     import folium
     from folium import plugins
     from branca.colormap import LinearColormap
-    import numpy as np
-    from scipy.spatial import Voronoi
     import json
     
-    def extract_coord(series, key):
-        return pd.Series(series).apply(lambda g: g.get(key) if isinstance(g, dict) else None).mean()
+    # Load GeoJSON data
+    try:
+        with open('dubai_neighborhoods.geojson', 'r') as f:
+            neighborhoods_geojson = json.load(f)
+        with open('dubai_boundary.geojson', 'r') as f:
+            dubai_boundary = json.load(f)
+    except FileNotFoundError:
+        st.error("Boundary data not found. Please run the data collection script first.")
+        st.stop()
     
     # Prepare map data
     map_group = filtered_df.groupby('neighborhood').agg(
-        avg_roi=('roi_num', 'mean'),
-        latitude=('geolocation', lambda x: extract_coord(x, 'lng')),
-        longitude=('geolocation', lambda x: extract_coord(x, 'lat'))
+        avg_roi=('roi_num', 'mean')
     ).reset_index()
     
     map_group['avg_roi'] = map_group['avg_roi'].round(2)
-    
-    # Create Voronoi polygons
-    points = map_group[['longitude', 'latitude']].values
-    # Add boundary points to create a bounded Voronoi diagram
-    boundary_points = np.array([
-        [55.1447, 25.0742], [55.1466, 25.1210], [55.1639, 25.1486],
-        [55.2068, 25.1695], [55.2631, 25.1835], [55.3073, 25.1889],
-        [55.3641, 25.1878], [55.4071, 25.1722], [55.4347, 25.1537],
-        [55.4529, 25.1210], [55.4511, 25.0882], [55.4401, 25.0591],
-        [55.3989, 25.0300], [55.3577, 25.0155], [55.2885, 25.0119],
-        [55.2178, 25.0209], [55.1447, 25.0742]
-    ])
-    
-    # Combine actual points with boundary points
-    all_points = np.vstack([points, boundary_points])
-    vor = Voronoi(all_points)
     
     # Create the base map
     m = folium.Map(
@@ -225,57 +212,45 @@ with tab4:
         vmax=max_roi
     )
     
-    # Function to create a polygon from Voronoi region
-    def create_polygon(region, vertices):
-        return [[vertices[i][1], vertices[i][0]] for i in region]
-    
-    # Add Voronoi polygons to map
-    for i, point in enumerate(points):
-        if i < len(map_group):  # Only process actual neighborhood points
-            region = vor.regions[vor.point_region[i]]
-            if -1 not in region and len(region) > 0:  # Valid region
-                polygon = create_polygon(region, vor.vertices)
-                roi_value = map_group.iloc[i]['avg_roi']
-                color = colormap(roi_value)
-                
-                # Create GeoJSON for the polygon
-                geo_json = {
-                    "type": "Feature",
-                    "properties": {
-                        "neighborhood": map_group.iloc[i]['neighborhood'],
-                        "roi": roi_value
-                    },
-                    "geometry": {
-                        "type": "Polygon",
-                        "coordinates": [polygon]
-                    }
-                }
-                
-                # Add polygon to map
-                folium.GeoJson(
-                    geo_json,
-                    style_function=lambda x, color=color: {
-                        'fillColor': color,
-                        'fillOpacity': 0.7,
-                        'color': 'white',
-                        'weight': 1
-                    },
-                    tooltip=folium.GeoJsonTooltip(
-                        fields=['neighborhood', 'roi'],
-                        aliases=['Neighborhood', 'ROI (%)'],
-                        style=("background-color: white; color: #333333; font-family: arial; font-size: 12px; padding: 10px;")
-                    )
-                ).add_to(m)
-    
-    # Add the Dubai boundary
-    dubai_boundary = {
-        "type": "Feature",
-        "geometry": {
-            "type": "Polygon",
-            "coordinates": [boundary_points.tolist()]
+    # Add white background for areas outside Dubai
+    folium.GeoJson(
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Polygon",
+                "coordinates": [[
+                    [54, 24], [57, 24], [57, 26], [54, 26], [54, 24]
+                ]]
+            }
+        },
+        style_function=lambda x: {
+            'fillColor': 'white',
+            'fillOpacity': 1,
+            'color': 'none'
         }
-    }
+    ).add_to(m)
     
+    # Create choropleth layer
+    for feature in neighborhoods_geojson['features']:
+        neighborhood_name = feature['properties']['neighborhood']
+        roi_data = map_group[map_group['neighborhood'] == neighborhood_name]
+        
+        if not roi_data.empty:
+            roi_value = roi_data.iloc[0]['avg_roi']
+            color = colormap(roi_value)
+            
+            folium.GeoJson(
+                feature,
+                style_function=lambda x, color=color: {
+                    'fillColor': color,
+                    'fillOpacity': 0.7,
+                    'color': 'white',
+                    'weight': 1
+                },
+                tooltip=f"{neighborhood_name}<br>ROI: {roi_value:.2f}%"
+            ).add_to(m)
+    
+    # Add Dubai boundary with mask effect
     folium.GeoJson(
         dubai_boundary,
         style_function=lambda x: {
