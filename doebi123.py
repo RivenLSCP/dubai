@@ -1,130 +1,249 @@
 import streamlit as st
 import pandas as pd
 import json
+import plotly.express as px
+import pydeck as pdk
+import re
 
-# Set page config at the very beginning
-st.set_page_config(layout="wide")
+# -------------------------------
+# Helper Functions
+# -------------------------------
+def parse_size_range(size_range_str):
+    """
+    Parse a string like "600-799 sqft" and return the average as a float.
+    """
+    pattern = r"(\d+)-(\d+)"
+    match = re.search(pattern, size_range_str)
+    if match:
+        min_val = int(match.group(1))
+        max_val = int(match.group(2))
+        return (min_val + max_val) / 2
+    return None
 
-# Load and process data
+# -------------------------------
+# Page Config and Title
+# -------------------------------
+st.set_page_config(page_title="Dubai Real Estate Investment Dashboard", layout="wide")
+st.title("Dubai Real Estate Investment Dashboard")
+st.markdown("This dashboard provides insights into which neighborhoods and buildings in Dubai offer the best investment potential based on ROI, sale prices, rental yields, and more.")
+
+# -------------------------------
+# Load and Process Data
+# -------------------------------
 @st.cache_data
 def load_data():
-    with open('final_dubai_neighborhoods_v36.json', 'r') as file:
+    with open('06-02-2025/property_analysis_usd.json', 'r') as file:
         data = json.load(file)
-    df = pd.json_normalize(data['Dubai Neighborhoods'])
-    
-    # Extract nested fields
-    df['Proximity to Key Areas'] = df['Location & Accessibility.Proximity to Key Areas']
-    df['Traffic Conditions'] = df['Location & Accessibility.Traffic Conditions']
-    df['Available Housing Types'] = df['Housing Options & Costs.Available Housing Types']
-    df['Average Rent (EUR/month)'] = df['Housing Options & Costs.Average Rent (EUR/month)']
-    df['Cost of Living Index'] = df['Housing Options & Costs.Cost of Living Index']
-    df['Parks and Recreation'] = df['Amenities & Facilities.Parks and Recreation']
-    df['Healthcare Facilities'] = df['Amenities & Facilities.Healthcare Facilities']
-    df['Demographics'] = df['Community & Lifestyle.Demographics']
-    df['Family-Friendliness'] = df['Community & Lifestyle.Family-Friendliness']
-    df['Safety Rating'] = df['Community & Lifestyle.Safety Rating']
-    df['Green Spaces'] = df['Environment & Weather.Green Spaces']
-    df['Noise Levels'] = df['Environment & Weather.Noise Levels']
-    df['Air Quality Index'] = df['Environment & Weather.Air Quality Index']
-    df['Risk of Sandstorm'] = df['Risk Factors.Risk of Sandstorm']
-    df['Risk of Apartment Flooding'] = df['Risk Factors.Risk of Apartment Flooding']
-    df['Sports Facilities'] = df['Leisure & Entertainment.Sports Facilities']
-    df['Beach Access'] = df['Leisure & Entertainment.Beach Access']
+    rows = []
+    # Flatten the data so that each variant becomes its own row
+    for entry in data:
+        building = entry.get("building")
+        neighborhood = entry.get("neighborhood")
+        # If neighborhood is a list, extract its first element
+        if isinstance(neighborhood, list):
+            neighborhood = neighborhood[0] if neighborhood else None
+        # Loop over each variant and add building/neighborhood info
+        for variant in entry.get("variants", []):
+            row = variant.copy()  # Copy variant data
+            row["building"] = building
+            row["neighborhood"] = neighborhood
+            rows.append(row)
+    return pd.DataFrame(rows)
 
-    # Sort by Total Score and add Rank
-    df = df.sort_values('Total Score', ascending=False).reset_index(drop=True)
-    df['Rank'] = df.index + 1
-    return df
-
-# Load data
 df = load_data()
 
-# Streamlit app title
-st.title('Dubai Neighborhoods Dashboard')
+# Process ROI: ensure it is numeric.
+df['roi_num'] = pd.to_numeric(df['roi'], errors='coerce')
 
-# Sidebar filters
-st.sidebar.header('Filters')
-min_rent = int(df['Average Rent (EUR/month)'].min())
-max_rent = int(df['Average Rent (EUR/month)'].max())
-rent_range = st.sidebar.slider('Average Rent (EUR/month)', min_value=min_rent, max_value=max_rent, value=(min_rent, max_rent))
+# Convert average sale and rent from AED to USD (using 1 AED = 0.27 USD).
+CONVERSION_RATE = 0.27
+df['avg_sale_usd'] = df['avg_sale'] * CONVERSION_RATE
+df['avg_rent_usd'] = df['avg_rent'] * CONVERSION_RATE
 
-min_coli = int(df['Cost of Living Index'].min())
-max_coli = int(df['Cost of Living Index'].max())
-coli_range = st.sidebar.slider('Cost of Living Index', min_value=min_coli, max_value=max_coli, value=(min_coli, max_coli))
+# Create a new column for monthly rent (in USD) once.
+df['avg_rent_monthly_usd'] = df['avg_rent_usd'] / 12
 
-min_safety = int(df['Safety Rating'].min())
-max_safety = int(df['Safety Rating'].max())
-safety_range = st.sidebar.slider('Safety Rating', min_value=min_safety, max_value=max_safety, value=(min_safety, max_safety))
+# Derive an average sqft (for additional analysis) from the size_range string.
+df['avg_sqft'] = df['size_range'].apply(parse_size_range)
 
-# Filter data
-filtered_df = df[
-    (df['Average Rent (EUR/month)'] >= rent_range[0]) & 
-    (df['Average Rent (EUR/month)'] <= rent_range[1]) &
-    (df['Cost of Living Index'] >= coli_range[0]) & 
-    (df['Cost of Living Index'] <= coli_range[1]) &
-    (df['Safety Rating'] >= safety_range[0]) & 
-    (df['Safety Rating'] <= safety_range[1])
-]
+# -------------------------------
+# Sidebar Filters
+# -------------------------------
+st.sidebar.header("Filters")
+# Filter out None values before sorting the unique neighborhoods.
+neighborhood_options = sorted(df['neighborhood'].dropna().unique())
+selected_neighborhoods = st.sidebar.multiselect("Select Neighborhood(s)", options=neighborhood_options, default=neighborhood_options)
 
-df = df.rename(columns={'Average Rent (EUR/month)': 'Rent (EUR)'})
-# Normalize Scores and Rent
-df['Normalized Score'] = (df['Total Score'] - df['Total Score'].min()) / (df['Total Score'].max() - df['Total Score'].min())
-df['Normalized Rent'] = (df['Rent (EUR)'].max() - df['Rent (EUR)']) / (df['Rent (EUR)'].max() - df['Rent (EUR)'].min())
+bedroom_options = sorted(df['bedrooms'].unique())
+selected_bedrooms = st.sidebar.multiselect("Select Number of Bedrooms", options=bedroom_options, default=bedroom_options)
 
-# Calculate Value Index
-weight_score = 0.5
-weight_rent = 0.5
-df['Value Index'] = weight_score * df['Normalized Score'] + weight_rent * df['Normalized Rent']
+# Filter the dataframe based on the sidebar selections.
+filtered_df = df[(df['neighborhood'].isin(selected_neighborhoods)) & (df['bedrooms'].isin(selected_bedrooms))]
 
-# Calculate Score to Rent Ratio
-df['Score to Rent Ratio'] = df['Total Score'] / df['Rent (EUR)']
+# -------------------------------
+# Create Dashboard Tabs
+# -------------------------------
+tab1, tab2, tab3, tab4, tab5, tab6 = st.tabs([
+    "Overview", 
+    "Neighborhood Analysis", 
+    "Building Analysis", 
+    "Map View", 
+    "Recommendations",
+    "Living Yourself"
+])
 
-# Display Neighborhood Rankings
-st.subheader('Neighborhood Rankings')
-columns_to_display = [
-    'Area', 'Total Score', 'Rent (EUR)', 'Risk of Sandstorm', 
-    'Risk of Apartment Flooding', 'Sports Facilities', 'Beach Access', 
-    'Noise Levels', 'Proximity to Key Areas', 'Traffic Conditions',
-    'Available Housing Types', 'Cost of Living Index', 'Parks and Recreation', 
-    'Healthcare Facilities', 'Demographics', 'Family-Friendliness', 
-    'Safety Rating', 'Green Spaces', 'Air Quality Index'
-]
-st.dataframe(df.set_index('Rank')[columns_to_display])
+# ----- Tab 1: Overview -----
+with tab1:
+    st.header("Overview")
+    col1, col2, col3, col4 = st.columns(4)
+    with col1:
+        st.metric("Total Properties", len(filtered_df))
+    with col2:
+        st.metric("Average ROI (%)", f"{filtered_df['roi_num'].mean():.2f}%")
+    with col3:
+        st.metric("Average Sale ($)", f"${filtered_df['avg_sale_usd'].mean():,.0f}")
+    with col4:
+        st.metric("Average Rent ($/month)", f"${filtered_df['avg_rent_monthly_usd'].mean():,.0f}")
+    
+    st.markdown("### ROI Distribution")
+    fig_roi = px.histogram(filtered_df, x='roi_num', nbins=20, labels={'roi_num': 'ROI (%)'}, title="ROI Distribution")
+    st.plotly_chart(fig_roi, use_container_width=True)
+    
+    if filtered_df['avg_sqft'].notnull().any():
+        st.markdown("### Property Size Distribution (sqft)")
+        fig_sqft = px.histogram(filtered_df, x='avg_sqft', nbins=20, labels={'avg_sqft': 'Avg Sqft'}, title="Average Size (sqft) Distribution")
+        st.plotly_chart(fig_sqft, use_container_width=True)
 
-# Display Top 10 Most Expensive and Least Expensive Areas side by side
-st.subheader('Top 10 Most Expensive and Least Expensive Areas')
-col1, col2 = st.columns(2)
+# ----- Tab 2: Neighborhood Analysis -----
+with tab2:
+    st.header("Neighborhood Analysis")
+    neigh_group = filtered_df.groupby('neighborhood').agg(
+        total_properties=('building', 'count'),
+        avg_roi=('roi_num', 'mean'),
+        avg_sale=('avg_sale_usd', 'mean'),
+        avg_rent=('avg_rent_monthly_usd', 'mean')
+    ).reset_index().sort_values('avg_roi', ascending=False, na_position='last')
+    
+    neigh_group['avg_sale'] = neigh_group['avg_sale'].apply(lambda x: f"${x:,.0f}")
+    neigh_group['avg_rent'] = neigh_group['avg_rent'].apply(lambda x: f"${x:,.0f}")
+    
+    st.subheader("Neighborhood Performance Metrics")
+    st.dataframe(neigh_group[['neighborhood', 'total_properties', 'avg_roi', 'avg_sale', 'avg_rent']])
+    
+    st.markdown("#### Average ROI by Neighborhood")
+    fig_neigh = px.bar(neigh_group, x='neighborhood', y='avg_roi',
+                        labels={'avg_roi': 'Average ROI (%)'},
+                        title="Neighborhood Average ROI")
+    st.plotly_chart(fig_neigh, use_container_width=True)
 
-with col1:
-    st.write("Most Expensive Areas")
-    top_10_expensive = df.nlargest(10, 'Rent (EUR)').reset_index(drop=True)
-    top_10_expensive['Rank'] = top_10_expensive.index + 1
-    st.table(top_10_expensive.set_index('Rank')[['Area', 'Rent (EUR)']])
+# ----- Tab 3: Building Analysis -----
+with tab3:
+    st.header("Building Analysis")
+    building_group = filtered_df.groupby(['neighborhood', 'building']).agg(
+        total_variants=('size_range', 'nunique'),
+        avg_roi=('roi_num', 'mean'),
+        avg_sale=('avg_sale_usd', 'mean'),
+        avg_rent=('avg_rent_monthly_usd', 'mean'),
+        total_records=('building', 'count')
+    ).reset_index().sort_values('avg_roi', ascending=False, na_position='last')
+    
+    building_group['avg_sale'] = building_group['avg_sale'].apply(lambda x: f"${x:,.0f}")
+    building_group['avg_rent'] = building_group['avg_rent'].apply(lambda x: f"${x:,.0f}")
+    
+    st.dataframe(building_group[['neighborhood', 'building', 'total_variants', 'avg_roi', 'avg_sale', 'avg_rent', 'total_records']])
+    
+    st.markdown("#### Buildings: Sale Price vs ROI")
+    fig_build = px.scatter(building_group, x='avg_sale', y='avg_roi',
+                           color='neighborhood', size='total_records',
+                           hover_data=['building'],
+                           labels={'avg_sale': 'Average Sale ($)', 'avg_roi': 'Average ROI (%)'},
+                           title="Buildings: Sale Price vs ROI")
+    st.plotly_chart(fig_build, use_container_width=True)
 
-with col2:
-    st.write("Least Expensive Areas")
-    top_10_cheapest = df.nsmallest(10, 'Rent (EUR)').reset_index(drop=True)
-    top_10_cheapest['Rank'] = top_10_cheapest.index + 1
-    st.table(top_10_cheapest.set_index('Rank')[['Area', 'Rent (EUR)']])
-
-# Display Top 10 Areas with Highest Score to Rent Ratio
-st.subheader('Top 10 Areas with Highest Scores but Lowest Rent (Good Value)')
-top_10_ratio = df.nlargest(10, 'Score to Rent Ratio').reset_index(drop=True)
-top_10_ratio['Rank'] = top_10_ratio.index + 1
-st.table(top_10_ratio.set_index('Rank')[['Area', 'Total Score', 'Rent (EUR)', 'Score to Rent Ratio']])
-
-
-# Add CSS to make the tables more readable
-st.markdown("""
-<style>
-    .dataframe {
-        font-size: 12px;
+# ----- Tab 4: Map View -----
+with tab4:
+    st.header("Map View")
+    st.info("Neighborhood markers show average ROI. Click a marker for details.")
+    def extract_coord(series, key):
+        return pd.Series(series).apply(lambda g: g.get(key) if isinstance(g, dict) else None).mean()
+    
+    # Swap geolocation keys: use 'lng' as latitude and 'lat' as longitude.
+    map_group = filtered_df.groupby('neighborhood').agg(
+        avg_roi=('roi_num', 'mean'),
+        latitude=('geolocation', lambda x: extract_coord(x, 'lng')),
+        longitude=('geolocation', lambda x: extract_coord(x, 'lat'))
+    ).reset_index()
+    
+    view_state = pdk.ViewState(
+        latitude=map_group['latitude'].mean(),
+        longitude=map_group['longitude'].mean(),
+        zoom=12,
+        pitch=0,
+    )
+    
+    layer = pdk.Layer(
+        "ScatterplotLayer",
+        data=map_group,
+        get_position=["longitude", "latitude"],
+        get_fill_color="[255, 140, 0, 160]",
+        get_radius=300,
+        pickable=True,
+    )
+    
+    tooltip = {
+        "html": "<b>Neighborhood:</b> {neighborhood}<br/><b>Avg ROI:</b> {avg_roi:.2f}%",
+        "style": {"backgroundColor": "steelblue", "color": "white"}
     }
-    .dataframe th {
-        text-align: left;
-    }
-    .dataframe td {
-        text-align: left;
-    }
-</style>
-""", unsafe_allow_html=True)
+    
+    r = pdk.Deck(
+        layers=[layer],
+        initial_view_state=view_state,
+        tooltip=tooltip
+    )
+    st.pydeck_chart(r)
+
+# ----- Tab 5: Investment Recommendations -----
+with tab5:
+    st.header("Investment Recommendations")
+    top_neigh = neigh_group.sort_values('avg_roi', ascending=False, na_position='last').head(5)
+    st.dataframe(top_neigh[['neighborhood', 'total_properties', 'avg_roi', 'avg_sale', 'avg_rent']])
+    
+    st.markdown("### Top Properties by ROI")
+    top_properties = filtered_df.sort_values('roi_num', ascending=False, na_position='last').head(10)
+    top_properties_display = top_properties.copy()
+    top_properties_display['avg_sale'] = top_properties_display['avg_sale_usd'].round(0).astype(int)
+    top_properties_display['avg_rent'] = (top_properties_display['avg_rent_usd'] / 12).round(0).astype(int)
+    top_properties_display['avg_sale'] = top_properties_display['avg_sale'].apply(lambda x: f"${x:,}")
+    top_properties_display['avg_rent'] = top_properties_display['avg_rent'].apply(lambda x: f"${x:,}")
+    
+    st.dataframe(top_properties_display[['building', 'neighborhood', 'bedrooms', 'size_range', 'roi_num', 'avg_sale', 'avg_rent']])
+    
+    st.markdown("""
+    **Investment Insights:**
+    - **High ROI:** Properties with higher ROI indicate strong rental yields.
+    - **Market Volume:** Neighborhoods with more properties suggest better liquidity.
+    - **Price Consideration:** Compare average sale prices with ROI to balance capital growth and rental income.
+    - **Configuration Variants:** Evaluate distinct size ranges as they might indicate diverse investment opportunities within the same building.
+    """)
+
+# ----- Tab 6: Living Yourself -----
+with tab6:
+    st.header("Living Yourself: Downtown Dubai & Business Bay Buildings")
+    # Filter the data for buildings in either "Downtown Dubai" or "Business Bay"
+    living_df = df[df['neighborhood'].isin(["Downtown Dubai", "Business Bay"])]
+    if living_df.empty:
+        st.info("No properties found for Downtown Dubai or Business Bay in the dataset.")
+    else:
+        # Group by building and neighborhood and calculate numeric average ROI, numeric average monthly rent, and number of variants.
+        living_buildings = living_df.groupby(['neighborhood', 'building']).agg(
+            avg_roi=('roi_num', 'mean'),
+            avg_rent=('avg_rent_monthly_usd', 'mean'),
+            total_variants=('size_range', 'nunique')
+        ).reset_index()
+        # Sort by the numeric average monthly rent descending
+        living_buildings = living_buildings.sort_values('avg_rent', ascending=False, na_position='last')
+        # Create a new display column for average rent
+        living_buildings['avg_rent_display'] = living_buildings['avg_rent'].apply(lambda x: f"${x:,.0f}")
+        st.dataframe(living_buildings[['neighborhood', 'building', 'avg_roi', 'avg_rent_display', 'total_variants']])
+
+st.write("Dashboard provided by your custom Dubai Real Estate Investment Dashboard")

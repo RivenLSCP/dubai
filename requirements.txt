@@ -3,3 +3,10 @@ python-dateutil==2.9.0.post0
 python-dotenv==1.0.1
 python-http-client==3.3.7
 streamlit==1.37.1
+pandas
+plotly==5.18.0
+numpy==1.24.3
+pydeck==0.8.0
+folium==0.14.0
+streamlit-folium==0.10.1
+pydeck
