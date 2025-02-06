@@ -203,11 +203,15 @@ with tab4:
     max_roi = map_group['avg_roi'].max()
     map_group['color'] = map_group['avg_roi'].apply(lambda x: get_color_scale(x, min_roi, max_roi))
     
+    # Updated view state specifically for Dubai
     view_state = pdk.ViewState(
-        latitude=map_group['latitude'].mean(),
-        longitude=map_group['longitude'].mean(),
-        zoom=12,
+        latitude=25.2048,     # Dubai's central latitude
+        longitude=55.2708,    # Dubai's central longitude
+        zoom=11,              # Closer zoom to show just Dubai
         pitch=45,
+        bearing=0,            # Align map with north
+        max_zoom=16,          # Limit maximum zoom
+        min_zoom=9,           # Limit minimum zoom to keep focus on Dubai
     )
     
     layer = pdk.Layer(
@@ -232,7 +236,12 @@ with tab4:
         layers=[layer],
         initial_view_state=view_state,
         tooltip=tooltip,
-        map_style="mapbox://styles/mapbox/light-v9"
+        map_style="mapbox://styles/mapbox/light-v9",
+        # Add map bounds to restrict panning
+        map_provider="mapbox",
+        parameters={
+            "maxBounds": [[55.0, 24.8], [55.5, 25.4]]  # Approximate Dubai bounds
+        }
     )
     
     st.pydeck_chart(r)
