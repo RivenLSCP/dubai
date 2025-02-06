@@ -163,49 +163,107 @@ with tab3:
 # ----- Tab 4: Map View -----
 with tab4:
     st.header("Map View")
-    st.info("Neighborhood markers show average ROI. Click a marker for details.")
+    st.info("Neighborhood markers show average ROI. Colors indicate ROI levels: Red (low) to Green (high)")
     def extract_coord(series, key):
         return pd.Series(series).apply(lambda g: g.get(key) if isinstance(g, dict) else None).mean()
     
-    # Swap geolocation keys: use 'lng' as latitude and 'lat' as longitude.
+    # Prepare map data
     map_group = filtered_df.groupby('neighborhood').agg(
         avg_roi=('roi_num', 'mean'),
         latitude=('geolocation', lambda x: extract_coord(x, 'lng')),
         longitude=('geolocation', lambda x: extract_coord(x, 'lat'))
     ).reset_index()
     
-    # Round the avg_roi to 2 decimal places to avoid formatting issues
     map_group['avg_roi'] = map_group['avg_roi'].round(2)
+    
+    # Calculate color based on ROI percentile
+    def get_color_scale(roi_value, min_roi, max_roi):
+        if pd.isna(roi_value):
+            return [128, 128, 128]  # Gray for NA values
+        
+        # Normalize ROI value between 0 and 1
+        normalized = (roi_value - min_roi) / (max_roi - min_roi) if max_roi != min_roi else 0.5
+        
+        # Red to Yellow to Green color scale
+        if normalized < 0.5:
+            # Red to Yellow
+            r = 255
+            g = int(normalized * 2 * 255)
+            b = 0
+        else:
+            # Yellow to Green
+            r = int((1 - normalized) * 2 * 255)
+            g = 255
+            b = 0
+            
+        return [r, g, b]
+
+    # Add color column
+    min_roi = map_group['avg_roi'].min()
+    max_roi = map_group['avg_roi'].max()
+    map_group['color'] = map_group['avg_roi'].apply(lambda x: get_color_scale(x, min_roi, max_roi))
     
     view_state = pdk.ViewState(
         latitude=map_group['latitude'].mean(),
         longitude=map_group['longitude'].mean(),
         zoom=12,
-        pitch=0,
+        pitch=45,
+        bearing=0
     )
     
-    layer = pdk.Layer(
+    # Create scatter plot layer with dynamic colors
+    scatter_layer = pdk.Layer(
         "ScatterplotLayer",
         data=map_group,
         get_position=["longitude", "latitude"],
-        get_fill_color="[255, 140, 0, 160]",
+        get_fill_color="color",
         get_radius=300,
         pickable=True,
+        opacity=0.8,
     )
     
-    # Updated tooltip with proper string formatting
+    # Add a base map layer that looks more like Google Maps
+    basemap_layer = pdk.Layer(
+        "MapboxLayer",
+        id="basemap",
+        mapboxApiAccessToken="pk.eyJ1IjoibWFwYm94IiwiYSI6ImNpejY4M29iazA2Z2gycXA4N2pmbDZmangifQ.-g_vE53SD2WrJ6tFX7QHmA",
+        mapStyle="mapbox://styles/mapbox/light-v9"
+    )
+    
     tooltip = {
         "html": "<b>Neighborhood:</b> {neighborhood}<br/>"
                 "<b>Avg ROI:</b> {avg_roi}%",
-        "style": {"backgroundColor": "steelblue", "color": "white"}
+        "style": {
+            "backgroundColor": "white",
+            "color": "black",
+            "fontSize": "12px",
+            "padding": "10px",
+            "borderRadius": "4px",
+            "boxShadow": "3px 3px 10px rgba(0,0,0,0.2)"
+        }
     }
     
     r = pdk.Deck(
-        layers=[layer],
+        layers=[basemap_layer, scatter_layer],
         initial_view_state=view_state,
-        tooltip=tooltip
+        tooltip=tooltip,
+        map_style="mapbox://styles/mapbox/light-v9",
+        api_keys={
+            "mapbox": "pk.eyJ1IjoibWFwYm94IiwiYSI6ImNpejY4M29iazA2Z2gycXA4N2pmbDZmangifQ.-g_vE53SD2WrJ6tFX7QHmA"
+        }
     )
+    
     st.pydeck_chart(r)
+    
+    # Add a color scale legend
+    st.markdown("### ROI Color Scale")
+    col1, col2, col3 = st.columns(3)
+    with col1:
+        st.markdown(f"🔴 Low ROI: {min_roi:.1f}%")
+    with col2:
+        st.markdown(f"🟡 Medium ROI: {((max_roi + min_roi)/2):.1f}%")
+    with col3:
+        st.markdown(f"🟢 High ROI: {max_roi:.1f}%")
 
 # ----- Tab 5: Investment Recommendations -----
 with tab5:
