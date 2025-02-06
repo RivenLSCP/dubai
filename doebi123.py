@@ -114,7 +114,7 @@ with tab1:
     with col4:
         st.metric("Average Rent ($/month)", f"${filtered_df['avg_rent_monthly_usd'].mean():,.0f}")
     
-    st.markdown("### ROI Distribution")
+    st.markdown("### ROI (%) Distribution (n={})".format(len(filtered_df)))
     # Calculate ROI statistics and remove outliers
     q1 = filtered_df['roi_num'].quantile(0.05)
     q3 = filtered_df['roi_num'].quantile(0.95)
@@ -126,7 +126,7 @@ with tab1:
         nbins=20,
         labels={'roi_num': 'ROI (%)'},
         title="ROI Distribution (excluding outliers)",
-        text_auto=True  # Show count numbers inside bars
+        text_auto=True
     )
     
     # Update layout for better aesthetics
@@ -144,11 +144,6 @@ with tab1:
     )
     
     st.plotly_chart(fig_roi, use_container_width=True)
-    
-    if filtered_df['avg_sqft'].notnull().any():
-        st.markdown("### Property Size Distribution (sqft)")
-        fig_sqft = px.histogram(filtered_df, x='avg_sqft', nbins=20, labels={'avg_sqft': 'Avg Sqft'}, title="Average Size (sqft) Distribution")
-        st.plotly_chart(fig_sqft, use_container_width=True)
 
 # ----- Tab 2: Neighborhood Analysis -----
 with tab2:
