@@ -114,7 +114,7 @@ with tab1:
     with col4:
         st.metric("Average Rent ($/month)", f"${filtered_df['avg_rent_monthly_usd'].mean():,.0f}")
     
-    st.markdown("### ROI (%) Distribution (n={})".format(len(filtered_df)))
+    st.markdown("### ROI Distribution")
     # Calculate ROI statistics and remove outliers
     q1 = filtered_df['roi_num'].quantile(0.05)
     q3 = filtered_df['roi_num'].quantile(0.95)
@@ -126,11 +126,11 @@ with tab1:
         nbins=20,
         labels={'roi_num': 'ROI (%)'},
         title="ROI Distribution (excluding outliers)",
-        text_auto=True
     )
     
-    # Update layout for better aesthetics
+    # Update traces to show both count and ROI% in each bar
     fig_roi.update_traces(
+        texttemplate="ROI(%)=%{x:.1f}<br>n=%{y}",  # Show both ROI% and count
         textposition='inside',
         textfont=dict(size=10),
         hovertemplate='ROI: %{x:.1f}%<br>Count: %{y}<extra></extra>'
