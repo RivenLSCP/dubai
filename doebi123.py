@@ -4,6 +4,10 @@ import json
 import plotly.express as px
 import pydeck as pdk
 import re
+import folium
+from folium import plugins
+import geopandas as gpd
+from branca.colormap import LinearColormap
 
 # -------------------------------
 # Helper Functions
@@ -164,89 +168,121 @@ with tab3:
 with tab4:
     st.header("Map View")
     st.info("Neighborhood markers show average ROI. Colors indicate ROI levels: Red (low) to Green (high)")
-    def extract_coord(series, key):
-        return pd.Series(series).apply(lambda g: g.get(key) if isinstance(g, dict) else None).mean()
     
     # Prepare map data
     map_group = filtered_df.groupby('neighborhood').agg(
         avg_roi=('roi_num', 'mean'),
-        latitude=('geolocation', lambda x: extract_coord(x, 'lng')),
-        longitude=('geolocation', lambda x: extract_coord(x, 'lat'))
+        latitude=('geolocation', lambda x: gpd.GeoSeries(x).apply(lambda g: g.get('lng') if isinstance(g, dict) else None).mean()),
+        longitude=('geolocation', lambda x: gpd.GeoSeries(x).apply(lambda g: g.get('lat') if isinstance(g, dict) else None).mean())
     ).reset_index()
     
     map_group['avg_roi'] = map_group['avg_roi'].round(2)
     
-    # Calculate color based on ROI percentile
-    def get_color_scale(roi_value, min_roi, max_roi):
-        if pd.isna(roi_value):
-            return [128, 128, 128]  # Gray for NA values
-        
-        # Normalize ROI value between 0 and 1
-        normalized = (roi_value - min_roi) / (max_roi - min_roi) if max_roi != min_roi else 0.5
-        
-        # Red to Yellow to Green color scale
-        if normalized < 0.5:
-            # Red to Yellow
-            r = 255
-            g = int(normalized * 2 * 255)
-            b = 0
-        else:
-            # Yellow to Green
-            r = int((1 - normalized) * 2 * 255)
-            g = 255
-            b = 0
-            
-        return [r, g, b]
-
-    # Add color column
-    min_roi = map_group['avg_roi'].min()
-    max_roi = map_group['avg_roi'].max()
-    map_group['color'] = map_group['avg_roi'].apply(lambda x: get_color_scale(x, min_roi, max_roi))
-    
-    # Updated view state specifically for Dubai
-    view_state = pdk.ViewState(
-        latitude=25.2048,     # Dubai's central latitude
-        longitude=55.2708,    # Dubai's central longitude
-        zoom=11,              # Closer zoom to show just Dubai
-        pitch=45,
-        bearing=0,            # Align map with north
-        max_zoom=16,          # Limit maximum zoom
-        min_zoom=9,           # Limit minimum zoom to keep focus on Dubai
+    # Create the base map centered on Dubai
+    m = folium.Map(
+        location=[25.2048, 55.2708],
+        zoom_start=11,
+        tiles='cartodbpositron'
     )
     
-    layer = pdk.Layer(
-        "ScatterplotLayer",
-        data=map_group,
-        get_position=["longitude", "latitude"],
-        get_fill_color="color",
-        get_radius=300,
-        pickable=True,
-        opacity=0.8,
-    )
-    
-    tooltip = {
-        "html": "<b>Neighborhood:</b> {neighborhood}<br/><b>Avg ROI:</b> {avg_roi}%",
-        "style": {
-            "backgroundColor": "white",
-            "color": "black"
+    # Add the Dubai boundary
+    dubai_boundary = {
+        "type": "Feature",
+        "properties": {},
+        "geometry": {
+            "type": "Polygon",
+            "coordinates": [[
+                [55.1447, 25.0742], # Dubai boundary points
+                [55.1466, 25.1210],
+                [55.1639, 25.1486],
+                [55.2068, 25.1695],
+                [55.2631, 25.1835],
+                [55.3073, 25.1889],
+                [55.3641, 25.1878],
+                [55.4071, 25.1722],
+                [55.4347, 25.1537],
+                [55.4529, 25.1210],
+                [55.4511, 25.0882],
+                [55.4401, 25.0591],
+                [55.3989, 25.0300],
+                [55.3577, 25.0155],
+                [55.2885, 25.0119],
+                [55.2178, 25.0209],
+                [55.1447, 25.0742]
+            ]]
         }
     }
     
-    r = pdk.Deck(
-        layers=[layer],
-        initial_view_state=view_state,
-        tooltip=tooltip,
-        map_style="mapbox://styles/mapbox/light-v9",
-        # Add map bounds to restrict panning
-        map_provider="mapbox",
-        parameters={
-            "maxBounds": [[55.0, 24.8], [55.5, 25.4]]  # Approximate Dubai bounds
+    # Add the Dubai boundary
+    folium.GeoJson(
+        dubai_boundary,
+        style_function=lambda x: {
+            'fillColor': 'none',
+            'color': '#333333',
+            'weight': 2
         }
+    ).add_to(m)
+    
+    # Create a mask outside Dubai
+    folium.GeoJson(
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Polygon",
+                "coordinates": [[
+                    [-180, -90], [180, -90], [180, 90], [-180, 90], [-180, -90]
+                ]]
+            }
+        },
+        style_function=lambda x: {
+            'fillColor': 'white',
+            'fillOpacity': 0.8,
+            'color': 'none',
+        }
+    ).add_to(m)
+    
+    # Add the Dubai boundary again to create the mask effect
+    mask = folium.GeoJson(
+        dubai_boundary,
+        style_function=lambda x: {
+            'fillColor': 'none',
+            'fillOpacity': 0,
+            'color': 'none',
+            'weight': 0
+        }
+    ).add_to(m)
+    
+    # Create color map for ROI values
+    min_roi = map_group['avg_roi'].min()
+    max_roi = map_group['avg_roi'].max()
+    colormap = LinearColormap(
+        colors=['red', 'yellow', 'green'],
+        vmin=min_roi,
+        vmax=max_roi
     )
     
-    st.pydeck_chart(r)
+    # Add markers for each neighborhood
+    for idx, row in map_group.iterrows():
+        color = colormap(row['avg_roi'])
+        folium.CircleMarker(
+            location=[row['latitude'], row['longitude']],
+            radius=15,
+            popup=f"<b>{row['neighborhood']}</b><br>ROI: {row['avg_roi']:.2f}%",
+            color=color,
+            fill=True,
+            fill_color=color,
+            fill_opacity=0.7,
+            weight=2
+        ).add_to(m)
     
-    # Add a color scale legend
+    # Add the colormap to the map
+    colormap.add_to(m)
+    colormap.caption = 'ROI %'
+    
+    # Use Streamlit's folium_chart to display the map
+    st_folium = st.components.v1.html(m._repr_html_(), height=600)
+    
+    # Add a color scale legend below the map
     st.markdown("### ROI Color Scale")
     col1, col2, col3 = st.columns(3)
     with col1:
