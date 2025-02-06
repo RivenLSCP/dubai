@@ -228,13 +228,16 @@ with tab5:
 
 # ----- Tab 6: Living Yourself -----
 with tab6:
-    st.header("Living Yourself: Downtown Dubai & Business Bay Buildings")
-    # Filter the data for buildings in either "Downtown Dubai" or "Business Bay"
-    living_df = df[df['neighborhood'].isin(["Downtown Dubai", "Business Bay"])]
+    st.header("Living Yourself: Downtown Dubai & Business Bay Buildings (Monthly Rent ≤ $3,500)")
+    # Filter the data for buildings in either "Downtown Dubai" or "Business Bay" and rent <= $3500
+    living_df = df[
+        (df['neighborhood'].isin(["Downtown Dubai", "Business Bay"])) & 
+        (df['avg_rent_monthly_usd'] <= 3500)
+    ]
     if living_df.empty:
-        st.info("No properties found for Downtown Dubai or Business Bay in the dataset.")
+        st.info("No properties found for Downtown Dubai or Business Bay within the rent range.")
     else:
-        # Group by building and neighborhood and calculate numeric average ROI, numeric average monthly rent, and number of variants.
+        # Group by building and neighborhood and calculate numeric average ROI, numeric average monthly rent, and number of variants
         living_buildings = living_df.groupby(['neighborhood', 'building']).agg(
             avg_roi=('roi_num', 'mean'),
             avg_rent=('avg_rent_monthly_usd', 'mean'),
