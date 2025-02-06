@@ -10,3 +10,5 @@ folium
 branca
 numpy
 scipy
+osmnx
+geopandas
