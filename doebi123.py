@@ -174,73 +174,133 @@ with tab4:
     st.header("Map View")
     st.info("Areas show average ROI by neighborhood. Colors indicate ROI levels: Red (low) to Green (high)")
     
-    # Load GeoJSON data
-    try:
-        neighborhoods = gpd.read_file('dubai_neighborhoods.geojson')
-        dubai_boundary = gpd.read_file('dubai_boundary.geojson')
-    except Exception as e:
-        st.error("Boundary data not found. Please run the data collection script first.")
-        st.stop()
+    import folium
+    from folium import plugins
+    from branca.colormap import LinearColormap
+    import numpy as np
+    from scipy.spatial import Voronoi
+    import json
+    
+    def extract_coord(series, key):
+        return pd.Series(series).apply(lambda g: g.get(key) if isinstance(g, dict) else None).mean()
     
     # Prepare map data
     map_group = filtered_df.groupby('neighborhood').agg(
-        avg_roi=('roi_num', 'mean')
+        avg_roi=('roi_num', 'mean'),
+        latitude=('geolocation', lambda x: extract_coord(x, 'lng')),
+        longitude=('geolocation', lambda x: extract_coord(x, 'lat'))
     ).reset_index()
     
-    # Merge ROI data with neighborhood geometries
-    neighborhoods = neighborhoods.merge(map_group, on='neighborhood', how='left')
+    map_group['avg_roi'] = map_group['avg_roi'].round(2)
     
-    # Create the figure
-    fig, ax = plt.subplots(figsize=(15, 15))
+    # Create Voronoi polygons
+    points = map_group[['longitude', 'latitude']].values
+    # Add boundary points to create a bounded Voronoi diagram
+    boundary_points = np.array([
+        [55.1447, 25.0742], [55.1466, 25.1210], [55.1639, 25.1486],
+        [55.2068, 25.1695], [55.2631, 25.1835], [55.3073, 25.1889],
+        [55.3641, 25.1878], [55.4071, 25.1722], [55.4347, 25.1537],
+        [55.4529, 25.1210], [55.4511, 25.0882], [55.4401, 25.0591],
+        [55.3989, 25.0300], [55.3577, 25.0155], [55.2885, 25.0119],
+        [55.2178, 25.0209], [55.1447, 25.0742]
+    ])
     
-    # Create custom colormap (red to yellow to green)
-    colors = ['red', 'yellow', 'green']
-    n_bins = 100
-    cmap = LinearSegmentedColormap.from_list("custom", colors, N=n_bins)
+    # Combine actual points with boundary points
+    all_points = np.vstack([points, boundary_points])
+    vor = Voronoi(all_points)
     
-    # Plot neighborhoods with ROI colors
-    neighborhoods.plot(
-        column='avg_roi',
-        cmap=cmap,
-        linewidth=0.8,
-        edgecolor='white',
-        ax=ax,
-        legend=True,
-        legend_kwds={
-            'label': 'ROI %',
-            'orientation': 'horizontal',
-            'shrink': 0.5,
-            'pad': 0.02
+    # Create the base map
+    m = folium.Map(
+        location=[25.2048, 55.2708],
+        zoom_start=11,
+        tiles='cartodbpositron'
+    )
+    
+    # Create color map for ROI values
+    min_roi = map_group['avg_roi'].min()
+    max_roi = map_group['avg_roi'].max()
+    colormap = LinearColormap(
+        colors=['red', 'yellow', 'green'],
+        vmin=min_roi,
+        vmax=max_roi
+    )
+    
+    # Function to create a polygon from Voronoi region
+    def create_polygon(region, vertices):
+        return [[vertices[i][1], vertices[i][0]] for i in region]
+    
+    # Add Voronoi polygons to map
+    for i, point in enumerate(points):
+        if i < len(map_group):  # Only process actual neighborhood points
+            region = vor.regions[vor.point_region[i]]
+            if -1 not in region and len(region) > 0:  # Valid region
+                polygon = create_polygon(region, vor.vertices)
+                roi_value = map_group.iloc[i]['avg_roi']
+                color = colormap(roi_value)
+                
+                # Create GeoJSON for the polygon
+                geo_json = {
+                    "type": "Feature",
+                    "properties": {
+                        "neighborhood": map_group.iloc[i]['neighborhood'],
+                        "roi": roi_value
+                    },
+                    "geometry": {
+                        "type": "Polygon",
+                        "coordinates": [polygon]
+                    }
+                }
+                
+                # Add polygon to map
+                folium.GeoJson(
+                    geo_json,
+                    style_function=lambda x, color=color: {
+                        'fillColor': color,
+                        'fillOpacity': 0.7,
+                        'color': 'white',
+                        'weight': 1
+                    },
+                    tooltip=folium.GeoJsonTooltip(
+                        fields=['neighborhood', 'roi'],
+                        aliases=['Neighborhood', 'ROI (%)'],
+                        style=("background-color: white; color: #333333; font-family: arial; font-size: 12px; padding: 10px;")
+                    )
+                ).add_to(m)
+    
+    # Add the Dubai boundary
+    dubai_boundary = {
+        "type": "Feature",
+        "geometry": {
+            "type": "Polygon",
+            "coordinates": [boundary_points.tolist()]
         }
-    )
+    }
     
-    # Add basemap
-    neighborhoods = neighborhoods.to_crs(epsg=3857)
-    ctx.add_basemap(
-        ax,
-        source=ctx.providers.CartoDB.Positron,
-        zoom=12
-    )
+    folium.GeoJson(
+        dubai_boundary,
+        style_function=lambda x: {
+            'fillColor': 'none',
+            'color': '#333333',
+            'weight': 2
+        }
+    ).add_to(m)
     
-    # Remove axes
-    ax.set_axis_off()
-    
-    # Set the plot limits to Dubai boundary
-    ax.set_xlim(neighborhoods.total_bounds[0], neighborhoods.total_bounds[2])
-    ax.set_ylim(neighborhoods.total_bounds[1], neighborhoods.total_bounds[3])
+    # Add the colormap to the map
+    colormap.add_to(m)
+    colormap.caption = 'ROI %'
     
     # Display the map
-    st.pyplot(fig)
+    st_folium = st.components.v1.html(m._repr_html_(), height=600)
     
-    # Add a color scale legend below the map
+    # Add a color scale legend
     st.markdown("### ROI Color Scale")
     col1, col2, col3 = st.columns(3)
     with col1:
-        st.markdown(f"🔴 Low ROI: {neighborhoods['avg_roi'].min():.1f}%")
+        st.markdown(f"🔴 Low ROI: {min_roi:.1f}%")
     with col2:
-        st.markdown(f"🟡 Medium ROI: {neighborhoods['avg_roi'].mean():.1f}%")
+        st.markdown(f"🟡 Medium ROI: {((max_roi + min_roi)/2):.1f}%")
     with col3:
-        st.markdown(f"🟢 High ROI: {neighborhoods['avg_roi'].max():.1f}%")
+        st.markdown(f"🟢 High ROI: {max_roi:.1f}%")
 
 # ----- Tab 5: Investment Recommendations -----
 with tab5:
