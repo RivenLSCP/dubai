@@ -192,12 +192,8 @@ with tab2:
     
     with col2:
         st.subheader("Key Metrics")
-        # Format metrics for better readability
-        metrics_df = neigh_group.copy()
-        
-        # Use streamlit's native dataframe styling
         st.dataframe(
-            metrics_df,
+            neigh_group,
             column_order=["neighborhood", "total_properties", "avg_roi", "avg_sale", "avg_rent"],
             hide_index=True,
             column_config={
@@ -221,20 +217,6 @@ with tab2:
                 )
             }
         )
-    
-    # Add insights section
-    with st.expander("📊 Neighborhood Insights", expanded=True):
-        st.markdown("""
-        **Key Findings:**
-        - Highest ROI neighborhoods
-        - Price ranges across neighborhoods
-        - Property availability by area
-        
-        **Investment Considerations:**
-        - Higher property counts suggest better market liquidity
-        - Balance ROI potential with entry costs
-        - Consider neighborhood development plans
-        """)
 
 # ----- Tab 3: Building Analysis -----
 with tab3:
@@ -337,26 +319,72 @@ with tab4:
 # ----- Tab 5: Investment Recommendations -----
 with tab5:
     st.header("Investment Recommendations")
-    top_neigh = neigh_group.sort_values('avg_roi', ascending=False, na_position='last').head(5)
-    st.dataframe(top_neigh[['neighborhood', 'total_properties', 'avg_roi', 'avg_sale', 'avg_rent']])
     
-    st.markdown("### Top Properties by ROI")
-    top_properties = filtered_df.sort_values('roi_num', ascending=False, na_position='last').head(10)
-    top_properties_display = top_properties.copy()
-    top_properties_display['avg_sale'] = top_properties_display['avg_sale_usd'].round(0).astype(int)
-    top_properties_display['avg_rent'] = (top_properties_display['avg_rent_usd'] / 12).round(0).astype(int)
-    top_properties_display['avg_sale'] = top_properties_display['avg_sale'].apply(lambda x: f"${x:,}")
-    top_properties_display['avg_rent'] = top_properties_display['avg_rent'].apply(lambda x: f"${x:,}")
+    # Create three columns for KPIs
+    col1, col2, col3 = st.columns(3)
     
-    st.dataframe(top_properties_display[['building', 'neighborhood', 'bedrooms', 'size_range', 'roi_num', 'avg_sale', 'avg_rent']])
+    # Get top ROI neighborhood
+    top_roi_neigh = neigh_group.nlargest(1, 'avg_roi')
+    with col1:
+        st.metric(
+            "Highest ROI Neighborhood",
+            f"{top_roi_neigh['neighborhood'].iloc[0]}",
+            f"{top_roi_neigh['avg_roi'].iloc[0]}%"
+        )
     
-    st.markdown("""
-    **Investment Insights:**
-    - **High ROI:** Properties with higher ROI indicate strong rental yields.
-    - **Market Volume:** Neighborhoods with more properties suggest better liquidity.
-    - **Price Consideration:** Compare average sale prices with ROI to balance capital growth and rental income.
-    - **Configuration Variants:** Evaluate distinct size ranges as they might indicate diverse investment opportunities within the same building.
-    """)
+    # Get lowest entry price neighborhood
+    lowest_price_neigh = neigh_group.copy()
+    lowest_price_neigh['avg_sale_num'] = pd.to_numeric(lowest_price_neigh['avg_sale'].str.replace('$', '').str.replace(',', ''))
+    lowest_price = lowest_price_neigh.nsmallest(1, 'avg_sale_num')
+    with col2:
+        st.metric(
+            "Most Affordable Neighborhood",
+            f"{lowest_price['neighborhood'].iloc[0]}",
+            lowest_price['avg_sale'].iloc[0]
+        )
+    
+    # Get neighborhood with most properties
+    most_properties = neigh_group.nlargest(1, 'total_properties')
+    with col3:
+        st.metric(
+            "Most Active Market",
+            f"{most_properties['neighborhood'].iloc[0]}",
+            f"{most_properties['total_properties'].iloc[0]} properties"
+        )
+    
+    # Top Properties Section
+    st.subheader("Top 10 Properties by ROI")
+    
+    # Get top properties
+    top_properties = filtered_df.nlargest(10, 'roi_num')
+    
+    # Create a more visually appealing property cards layout
+    for i in range(0, len(top_properties), 2):
+        col1, col2 = st.columns(2)
+        
+        # First property in the row
+        with col1:
+            if i < len(top_properties):
+                prop = top_properties.iloc[i]
+                with st.container(border=True):
+                    st.markdown(f"### {prop['building']}")
+                    st.markdown(f"**Neighborhood:** {prop['neighborhood']}")
+                    st.markdown(f"**ROI:** {prop['roi_num']:.1f}%")
+                    st.markdown(f"**Configuration:** {prop['bedrooms']} BR | {prop['size_range']}")
+                    st.markdown(f"**Sale Price:** ${prop['avg_sale_usd']:,.0f}")
+                    st.markdown(f"**Monthly Rent:** ${prop['avg_rent_monthly_usd']:,.0f}")
+        
+        # Second property in the row
+        with col2:
+            if i + 1 < len(top_properties):
+                prop = top_properties.iloc[i + 1]
+                with st.container(border=True):
+                    st.markdown(f"### {prop['building']}")
+                    st.markdown(f"**Neighborhood:** {prop['neighborhood']}")
+                    st.markdown(f"**ROI:** {prop['roi_num']:.1f}%")
+                    st.markdown(f"**Configuration:** {prop['bedrooms']} BR | {prop['size_range']}")
+                    st.markdown(f"**Sale Price:** ${prop['avg_sale_usd']:,.0f}")
+                    st.markdown(f"**Monthly Rent:** ${prop['avg_rent_monthly_usd']:,.0f}")
 
 # ----- Tab 6: Living Yourself -----
 with tab6:
