@@ -151,6 +151,19 @@ with tab1:
 with tab2:
     st.header("Neighborhood Analysis")
     
+    # Create neighborhood grouping first
+    neigh_group = filtered_df.groupby('neighborhood').agg(
+        total_properties=('building', 'count'),
+        avg_roi=('roi_num', 'mean'),
+        avg_sale=('avg_sale_usd', 'mean'),
+        avg_rent=('avg_rent_monthly_usd', 'mean')
+    ).reset_index()
+    
+    # Format the columns
+    neigh_group['avg_roi'] = neigh_group['avg_roi'].round(1)
+    neigh_group['avg_sale'] = neigh_group['avg_sale'].apply(lambda x: f"${x:,.0f}")
+    neigh_group['avg_rent'] = neigh_group['avg_rent'].apply(lambda x: f"${x:,.0f}")
+    
     # Create two columns for better layout
     col1, col2 = st.columns([2, 1])
     
@@ -161,19 +174,19 @@ with tab2:
                           y='avg_roi',
                           labels={'avg_roi': 'Average ROI (%)', 
                                  'neighborhood': 'Neighborhood'},
-                          text=neigh_group['avg_roi'].round(1),  # Add value labels
+                          text=neigh_group['avg_roi'].round(1),
                           title="")
         
         # Improve bar chart formatting
         fig_neigh.update_traces(
-            textposition='inside',  # Place text inside bars
+            textposition='inside',
             textfont=dict(size=12),
-            marker_color='#1f77b4'  # Consistent color scheme
+            marker_color='#1f77b4'
         )
         fig_neigh.update_layout(
-            xaxis_tickangle=-45,  # Angle neighborhood labels
+            xaxis_tickangle=-45,
             height=400,
-            margin=dict(t=0, b=0)  # Reduce margins
+            margin=dict(t=0, b=0)
         )
         st.plotly_chart(fig_neigh, use_container_width=True)
     
@@ -181,9 +194,6 @@ with tab2:
         st.subheader("Key Metrics")
         # Format metrics for better readability
         metrics_df = neigh_group.copy()
-        metrics_df['avg_roi'] = metrics_df['avg_roi'].round(1).astype(str) + '%'
-        metrics_df['avg_sale'] = metrics_df['avg_sale'].str.replace('$', '').str.replace(',', '').astype(float)
-        metrics_df['avg_rent'] = metrics_df['avg_rent'].str.replace('$', '').str.replace(',', '').astype(float)
         
         # Use streamlit's native dataframe styling
         st.dataframe(
@@ -196,19 +206,18 @@ with tab2:
                     "Properties",
                     help="Total number of properties",
                 ),
-                "avg_roi": st.column_config.TextColumn(
+                "avg_roi": st.column_config.NumberColumn(
                     "ROI",
-                    help="Average Return on Investment"
+                    help="Average Return on Investment",
+                    format="%.1f%%"
                 ),
-                "avg_sale": st.column_config.NumberColumn(
+                "avg_sale": st.column_config.TextColumn(
                     "Avg. Sale Price",
-                    help="Average sale price in USD",
-                    format="$%d"
+                    help="Average sale price in USD"
                 ),
-                "avg_rent": st.column_config.NumberColumn(
+                "avg_rent": st.column_config.TextColumn(
                     "Avg. Monthly Rent",
-                    help="Average monthly rent in USD",
-                    format="$%d"
+                    help="Average monthly rent in USD"
                 )
             }
         )
