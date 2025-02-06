@@ -128,11 +128,13 @@ with tab1:
         title="ROI Distribution (excluding outliers)",
     )
     
-    # Update traces to show both count and ROI% in each bar
+    # Update traces with larger, centered text
     fig_roi.update_traces(
-        texttemplate="ROI(%)=%{x:.1f}<br>n=%{y}",  # Show both ROI% and count
+        texttemplate="ROI(%)=%{x:.1f}<br>n=%{y}",
         textposition='inside',
-        textfont=dict(size=10),
+        textfont=dict(size=14),  # Increased font size
+        textangle=0,  # Ensure text is horizontal
+        insidetextanchor='middle',  # Center text vertically
         hovertemplate='ROI: %{x:.1f}%<br>Count: %{y}<extra></extra>'
     )
     
