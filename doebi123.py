@@ -169,30 +169,26 @@ with tab4:
     st.header("Map View")
     st.info("Neighborhood markers show average ROI. Colors indicate ROI levels: Red (low) to Green (high)")
     
+    def extract_coord(series, key):
+        return pd.Series(series).apply(lambda g: g.get(key) if isinstance(g, dict) else None).mean()
+    
     # Prepare map data
     map_group = filtered_df.groupby('neighborhood').agg(
         avg_roi=('roi_num', 'mean'),
-        latitude=('geolocation', lambda x: gpd.GeoSeries(x).apply(lambda g: g.get('lng') if isinstance(g, dict) else None).mean()),
-        longitude=('geolocation', lambda x: gpd.GeoSeries(x).apply(lambda g: g.get('lat') if isinstance(g, dict) else None).mean())
+        latitude=('geolocation', lambda x: extract_coord(x, 'lng')),
+        longitude=('geolocation', lambda x: extract_coord(x, 'lat'))
     ).reset_index()
     
     map_group['avg_roi'] = map_group['avg_roi'].round(2)
     
-    # Create the base map centered on Dubai
-    m = folium.Map(
-        location=[25.2048, 55.2708],
-        zoom_start=11,
-        tiles='cartodbpositron'
-    )
-    
-    # Add the Dubai boundary
+    # Dubai GeoJSON boundary
     dubai_boundary = {
         "type": "Feature",
         "properties": {},
         "geometry": {
             "type": "Polygon",
             "coordinates": [[
-                [55.1447, 25.0742], # Dubai boundary points
+                [55.1447, 25.0742],
                 [55.1466, 25.1210],
                 [55.1639, 25.1486],
                 [55.2068, 25.1695],
@@ -212,6 +208,13 @@ with tab4:
             ]]
         }
     }
+    
+    # Create the base map
+    m = folium.Map(
+        location=[25.2048, 55.2708],
+        zoom_start=11,
+        tiles='cartodbpositron'
+    )
     
     # Add the Dubai boundary
     folium.GeoJson(
@@ -279,10 +282,10 @@ with tab4:
     colormap.add_to(m)
     colormap.caption = 'ROI %'
     
-    # Use Streamlit's folium_chart to display the map
+    # Display the map
     st_folium = st.components.v1.html(m._repr_html_(), height=600)
     
-    # Add a color scale legend below the map
+    # Add a color scale legend
     st.markdown("### ROI Color Scale")
     col1, col2, col3 = st.columns(3)
     with col1:
