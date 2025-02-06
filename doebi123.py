@@ -79,15 +79,15 @@ df['avg_sqft'] = df['size_range'].apply(parse_size_range)
 # Sidebar Filters
 # -------------------------------
 st.sidebar.header("Filters")
-# Filter out None values before sorting the unique neighborhoods.
+# Filter out None values before sorting the unique neighborhoods
 neighborhood_options = sorted(df['neighborhood'].dropna().unique())
-selected_neighborhoods = st.sidebar.multiselect("Select Neighborhood(s)", options=neighborhood_options, default=neighborhood_options)
+selected_neighborhood = st.sidebar.selectbox("Select Neighborhood", options=neighborhood_options)
 
 bedroom_options = sorted(df['bedrooms'].unique())
-selected_bedrooms = st.sidebar.multiselect("Select Number of Bedrooms", options=bedroom_options, default=bedroom_options)
+selected_bedroom = st.sidebar.selectbox("Select Number of Bedrooms", options=bedroom_options)
 
-# Filter the dataframe based on the sidebar selections.
-filtered_df = df[(df['neighborhood'].isin(selected_neighborhoods)) & (df['bedrooms'].isin(selected_bedrooms))]
+# Filter the dataframe based on the sidebar selections
+filtered_df = df[(df['neighborhood'] == selected_neighborhood) & (df['bedrooms'] == selected_bedroom)]
 
 # -------------------------------
 # Create Dashboard Tabs
