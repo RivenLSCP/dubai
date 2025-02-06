@@ -208,11 +208,9 @@ with tab4:
         longitude=map_group['longitude'].mean(),
         zoom=12,
         pitch=45,
-        bearing=0
     )
     
-    # Create scatter plot layer with dynamic colors
-    scatter_layer = pdk.Layer(
+    layer = pdk.Layer(
         "ScatterplotLayer",
         data=map_group,
         get_position=["longitude", "latitude"],
@@ -222,35 +220,19 @@ with tab4:
         opacity=0.8,
     )
     
-    # Add a base map layer that looks more like Google Maps
-    basemap_layer = pdk.Layer(
-        "MapboxLayer",
-        id="basemap",
-        mapboxApiAccessToken="pk.eyJ1IjoibWFwYm94IiwiYSI6ImNpejY4M29iazA2Z2gycXA4N2pmbDZmangifQ.-g_vE53SD2WrJ6tFX7QHmA",
-        mapStyle="mapbox://styles/mapbox/light-v9"
-    )
-    
     tooltip = {
-        "html": "<b>Neighborhood:</b> {neighborhood}<br/>"
-                "<b>Avg ROI:</b> {avg_roi}%",
+        "html": "<b>Neighborhood:</b> {neighborhood}<br/><b>Avg ROI:</b> {avg_roi}%",
         "style": {
             "backgroundColor": "white",
-            "color": "black",
-            "fontSize": "12px",
-            "padding": "10px",
-            "borderRadius": "4px",
-            "boxShadow": "3px 3px 10px rgba(0,0,0,0.2)"
+            "color": "black"
         }
     }
     
     r = pdk.Deck(
-        layers=[basemap_layer, scatter_layer],
+        layers=[layer],
         initial_view_state=view_state,
         tooltip=tooltip,
-        map_style="mapbox://styles/mapbox/light-v9",
-        api_keys={
-            "mapbox": "pk.eyJ1IjoibWFwYm94IiwiYSI6ImNpejY4M29iazA2Z2gycXA4N2pmbDZmangifQ.-g_vE53SD2WrJ6tFX7QHmA"
-        }
+        map_style="mapbox://styles/mapbox/light-v9"
     )
     
     st.pydeck_chart(r)
