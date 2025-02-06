@@ -174,19 +174,13 @@ with tab4:
     st.header("Map View")
     st.info("Areas show average ROI by neighborhood. Colors indicate ROI levels: Red (low) to Green (high)")
     
-    import folium
-    from folium import plugins
-    from branca.colormap import LinearColormap
-    import json
     
     # Load GeoJSON data
     try:
         with open('dubai_neighborhoods.geojson', 'r') as f:
             neighborhoods_geojson = json.load(f)
-        with open('dubai_boundary.geojson', 'r') as f:
-            dubai_boundary = json.load(f)
     except FileNotFoundError:
-        st.error("Boundary data not found. Please run the data collection script first.")
+        st.error("Neighborhood boundary data not found. Please run the data collection script first.")
         st.stop()
     
     # Prepare map data
@@ -212,24 +206,6 @@ with tab4:
         vmax=max_roi
     )
     
-    # Add white background for areas outside Dubai
-    folium.GeoJson(
-        {
-            "type": "Feature",
-            "geometry": {
-                "type": "Polygon",
-                "coordinates": [[
-                    [54, 24], [57, 24], [57, 26], [54, 26], [54, 24]
-                ]]
-            }
-        },
-        style_function=lambda x: {
-            'fillColor': 'white',
-            'fillOpacity': 1,
-            'color': 'none'
-        }
-    ).add_to(m)
-    
     # Create choropleth layer
     for feature in neighborhoods_geojson['features']:
         neighborhood_name = feature['properties']['neighborhood']
@@ -249,16 +225,6 @@ with tab4:
                 },
                 tooltip=f"{neighborhood_name}<br>ROI: {roi_value:.2f}%"
             ).add_to(m)
-    
-    # Add Dubai boundary with mask effect
-    folium.GeoJson(
-        dubai_boundary,
-        style_function=lambda x: {
-            'fillColor': 'none',
-            'color': '#333333',
-            'weight': 2
-        }
-    ).add_to(m)
     
     # Add the colormap to the map
     colormap.add_to(m)
