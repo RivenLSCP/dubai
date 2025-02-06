@@ -237,16 +237,14 @@ with tab6:
     if living_df.empty:
         st.info("No properties found for Downtown Dubai or Business Bay within the rent range.")
     else:
-        # Group by building and neighborhood and calculate numeric average ROI, numeric average monthly rent, and number of variants
+        # Group by building and neighborhood and calculate average monthly rent
         living_buildings = living_df.groupby(['neighborhood', 'building']).agg(
-            avg_roi=('roi_num', 'mean'),
-            avg_rent=('avg_rent_monthly_usd', 'mean'),
-            total_variants=('size_range', 'nunique')
+            avg_rent=('avg_rent_monthly_usd', 'mean')
         ).reset_index()
         # Sort by the numeric average monthly rent descending
         living_buildings = living_buildings.sort_values('avg_rent', ascending=False, na_position='last')
         # Create a new display column for average rent
         living_buildings['avg_rent_display'] = living_buildings['avg_rent'].apply(lambda x: f"${x:,.0f}")
-        st.dataframe(living_buildings[['neighborhood', 'building', 'avg_roi', 'avg_rent_display', 'total_variants']])
+        st.dataframe(living_buildings[['neighborhood', 'building', 'avg_rent_display']])
 
 st.write("Dashboard provided by your custom Dubai Real Estate Investment Dashboard")
