@@ -7,6 +7,3 @@ pandas
 plotly==5.18.0
 numpy==1.24.3
 pydeck==0.8.0
-folium==0.14.0
-streamlit-folium==0.10.1
-pydeck
