@@ -79,15 +79,15 @@ df['avg_sqft'] = df['size_range'].apply(parse_size_range)
 # Sidebar Filters
 # -------------------------------
 st.sidebar.header("Filters")
-# Filter out None values before sorting the unique neighborhoods
+# Filter out None values before sorting the unique neighborhoods.
 neighborhood_options = sorted(df['neighborhood'].dropna().unique())
-selected_neighborhood = st.sidebar.selectbox("Select Neighborhood", options=neighborhood_options)
+selected_neighborhoods = st.sidebar.multiselect("Select Neighborhood(s)", options=neighborhood_options, default=neighborhood_options)
 
 bedroom_options = sorted(df['bedrooms'].unique())
-selected_bedroom = st.sidebar.selectbox("Select Number of Bedrooms", options=bedroom_options)
+selected_bedrooms = st.sidebar.multiselect("Select Number of Bedrooms", options=bedroom_options, default=bedroom_options)
 
-# Filter the dataframe based on the sidebar selections
-filtered_df = df[(df['neighborhood'] == selected_neighborhood) & (df['bedrooms'] == selected_bedroom)]
+# Filter the dataframe based on the sidebar selections.
+filtered_df = df[(df['neighborhood'].isin(selected_neighborhoods)) & (df['bedrooms'].isin(selected_bedrooms))]
 
 # -------------------------------
 # Create Dashboard Tabs
@@ -115,7 +115,34 @@ with tab1:
         st.metric("Average Rent ($/month)", f"${filtered_df['avg_rent_monthly_usd'].mean():,.0f}")
     
     st.markdown("### ROI Distribution")
-    fig_roi = px.histogram(filtered_df, x='roi_num', nbins=20, labels={'roi_num': 'ROI (%)'}, title="ROI Distribution")
+    # Calculate ROI statistics and remove outliers
+    q1 = filtered_df['roi_num'].quantile(0.05)
+    q3 = filtered_df['roi_num'].quantile(0.95)
+    roi_filtered = filtered_df[filtered_df['roi_num'].between(q1, q3)]
+    
+    fig_roi = px.histogram(
+        roi_filtered, 
+        x='roi_num',
+        nbins=20,
+        labels={'roi_num': 'ROI (%)'},
+        title="ROI Distribution (excluding outliers)",
+        text_auto=True  # Show count numbers inside bars
+    )
+    
+    # Update layout for better aesthetics
+    fig_roi.update_traces(
+        textposition='inside',
+        textfont=dict(size=10),
+        hovertemplate='ROI: %{x:.1f}%<br>Count: %{y}<extra></extra>'
+    )
+    
+    fig_roi.update_layout(
+        bargap=0.1,
+        showlegend=False,
+        xaxis_title="ROI (%)",
+        yaxis_title="Number of Properties"
+    )
+    
     st.plotly_chart(fig_roi, use_container_width=True)
     
     if filtered_df['avg_sqft'].notnull().any():
