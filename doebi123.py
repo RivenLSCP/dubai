@@ -174,6 +174,9 @@ with tab4:
         longitude=('geolocation', lambda x: extract_coord(x, 'lat'))
     ).reset_index()
     
+    # Round the avg_roi to 2 decimal places to avoid formatting issues
+    map_group['avg_roi'] = map_group['avg_roi'].round(2)
+    
     view_state = pdk.ViewState(
         latitude=map_group['latitude'].mean(),
         longitude=map_group['longitude'].mean(),
@@ -190,8 +193,10 @@ with tab4:
         pickable=True,
     )
     
+    # Updated tooltip with proper string formatting
     tooltip = {
-        "html": "<b>Neighborhood:</b> {neighborhood}<br/><b>Avg ROI:</b> {avg_roi:.2f}%",
+        "html": "<b>Neighborhood:</b> {neighborhood}<br/>"
+                "<b>Avg ROI:</b> {avg_roi}%",
         "style": {"backgroundColor": "steelblue", "color": "white"}
     }
     
