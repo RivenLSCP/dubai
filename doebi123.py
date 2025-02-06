@@ -150,24 +150,82 @@ with tab1:
 # ----- Tab 2: Neighborhood Analysis -----
 with tab2:
     st.header("Neighborhood Analysis")
-    neigh_group = filtered_df.groupby('neighborhood').agg(
-        total_properties=('building', 'count'),
-        avg_roi=('roi_num', 'mean'),
-        avg_sale=('avg_sale_usd', 'mean'),
-        avg_rent=('avg_rent_monthly_usd', 'mean')
-    ).reset_index().sort_values('avg_roi', ascending=False, na_position='last')
     
-    neigh_group['avg_sale'] = neigh_group['avg_sale'].apply(lambda x: f"${x:,.0f}")
-    neigh_group['avg_rent'] = neigh_group['avg_rent'].apply(lambda x: f"${x:,.0f}")
+    # Create two columns for better layout
+    col1, col2 = st.columns([2, 1])
     
-    st.subheader("Neighborhood Performance Metrics")
-    st.dataframe(neigh_group[['neighborhood', 'total_properties', 'avg_roi', 'avg_sale', 'avg_rent']])
+    with col1:
+        st.subheader("Average ROI by Neighborhood")
+        fig_neigh = px.bar(neigh_group, 
+                          x='neighborhood', 
+                          y='avg_roi',
+                          labels={'avg_roi': 'Average ROI (%)', 
+                                 'neighborhood': 'Neighborhood'},
+                          text=neigh_group['avg_roi'].round(1),  # Add value labels
+                          title="")
+        
+        # Improve bar chart formatting
+        fig_neigh.update_traces(
+            textposition='inside',  # Place text inside bars
+            textfont=dict(size=12),
+            marker_color='#1f77b4'  # Consistent color scheme
+        )
+        fig_neigh.update_layout(
+            xaxis_tickangle=-45,  # Angle neighborhood labels
+            height=400,
+            margin=dict(t=0, b=0)  # Reduce margins
+        )
+        st.plotly_chart(fig_neigh, use_container_width=True)
     
-    st.markdown("#### Average ROI by Neighborhood")
-    fig_neigh = px.bar(neigh_group, x='neighborhood', y='avg_roi',
-                        labels={'avg_roi': 'Average ROI (%)'},
-                        title="Neighborhood Average ROI")
-    st.plotly_chart(fig_neigh, use_container_width=True)
+    with col2:
+        st.subheader("Key Metrics")
+        # Format metrics for better readability
+        metrics_df = neigh_group.copy()
+        metrics_df['avg_roi'] = metrics_df['avg_roi'].round(1).astype(str) + '%'
+        metrics_df['avg_sale'] = metrics_df['avg_sale'].str.replace('$', '').str.replace(',', '').astype(float)
+        metrics_df['avg_rent'] = metrics_df['avg_rent'].str.replace('$', '').str.replace(',', '').astype(float)
+        
+        # Use streamlit's native dataframe styling
+        st.dataframe(
+            metrics_df,
+            column_order=["neighborhood", "total_properties", "avg_roi", "avg_sale", "avg_rent"],
+            hide_index=True,
+            column_config={
+                "neighborhood": "Neighborhood",
+                "total_properties": st.column_config.NumberColumn(
+                    "Properties",
+                    help="Total number of properties",
+                ),
+                "avg_roi": st.column_config.TextColumn(
+                    "ROI",
+                    help="Average Return on Investment"
+                ),
+                "avg_sale": st.column_config.NumberColumn(
+                    "Avg. Sale Price",
+                    help="Average sale price in USD",
+                    format="$%d"
+                ),
+                "avg_rent": st.column_config.NumberColumn(
+                    "Avg. Monthly Rent",
+                    help="Average monthly rent in USD",
+                    format="$%d"
+                )
+            }
+        )
+    
+    # Add insights section
+    with st.expander("📊 Neighborhood Insights", expanded=True):
+        st.markdown("""
+        **Key Findings:**
+        - Highest ROI neighborhoods
+        - Price ranges across neighborhoods
+        - Property availability by area
+        
+        **Investment Considerations:**
+        - Higher property counts suggest better market liquidity
+        - Balance ROI potential with entry costs
+        - Consider neighborhood development plans
+        """)
 
 # ----- Tab 3: Building Analysis -----
 with tab3:
