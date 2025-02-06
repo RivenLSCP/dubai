@@ -10,6 +10,9 @@ import geopandas as gpd
 from branca.colormap import LinearColormap
 import numpy as np
 from scipy.spatial import Voronoi
+import matplotlib.pyplot as plt
+import contextily as ctx
+from matplotlib.colors import LinearSegmentedColormap
 
 # -------------------------------
 # Helper Functions
@@ -170,14 +173,13 @@ with tab3:
 with tab4:
     st.header("Map View")
     st.info("Areas show average ROI by neighborhood. Colors indicate ROI levels: Red (low) to Green (high)")
-
     
     # Load GeoJSON data
     try:
-        with open('dubai_neighborhoods.geojson', 'r') as f:
-            neighborhoods_geojson = json.load(f)
-    except FileNotFoundError:
-        st.error("Neighborhood boundary data not found. Please run the data collection script first.")
+        neighborhoods = gpd.read_file('dubai_neighborhoods.geojson')
+        dubai_boundary = gpd.read_file('dubai_boundary.geojson')
+    except Exception as e:
+        st.error("Boundary data not found. Please run the data collection script first.")
         st.stop()
     
     # Prepare map data
@@ -185,60 +187,60 @@ with tab4:
         avg_roi=('roi_num', 'mean')
     ).reset_index()
     
-    map_group['avg_roi'] = map_group['avg_roi'].round(2)
+    # Merge ROI data with neighborhood geometries
+    neighborhoods = neighborhoods.merge(map_group, on='neighborhood', how='left')
     
-    # Create the base map
-    m = folium.Map(
-        location=[25.2048, 55.2708],
-        zoom_start=11,
-        tiles='cartodbpositron'
+    # Create the figure
+    fig, ax = plt.subplots(figsize=(15, 15))
+    
+    # Create custom colormap (red to yellow to green)
+    colors = ['red', 'yellow', 'green']
+    n_bins = 100
+    cmap = LinearSegmentedColormap.from_list("custom", colors, N=n_bins)
+    
+    # Plot neighborhoods with ROI colors
+    neighborhoods.plot(
+        column='avg_roi',
+        cmap=cmap,
+        linewidth=0.8,
+        edgecolor='white',
+        ax=ax,
+        legend=True,
+        legend_kwds={
+            'label': 'ROI %',
+            'orientation': 'horizontal',
+            'shrink': 0.5,
+            'pad': 0.02
+        }
     )
     
-    # Create color map for ROI values
-    min_roi = map_group['avg_roi'].min()
-    max_roi = map_group['avg_roi'].max()
-    colormap = LinearColormap(
-        colors=['red', 'yellow', 'green'],
-        vmin=min_roi,
-        vmax=max_roi
+    # Add basemap
+    neighborhoods = neighborhoods.to_crs(epsg=3857)
+    ctx.add_basemap(
+        ax,
+        source=ctx.providers.CartoDB.Positron,
+        zoom=12
     )
     
-    # Create choropleth layer
-    for feature in neighborhoods_geojson['features']:
-        neighborhood_name = feature['properties']['neighborhood']
-        roi_data = map_group[map_group['neighborhood'] == neighborhood_name]
-        
-        if not roi_data.empty:
-            roi_value = roi_data.iloc[0]['avg_roi']
-            color = colormap(roi_value)
-            
-            folium.GeoJson(
-                feature,
-                style_function=lambda x, color=color: {
-                    'fillColor': color,
-                    'fillOpacity': 0.7,
-                    'color': 'white',
-                    'weight': 1
-                },
-                tooltip=f"{neighborhood_name}<br>ROI: {roi_value:.2f}%"
-            ).add_to(m)
+    # Remove axes
+    ax.set_axis_off()
     
-    # Add the colormap to the map
-    colormap.add_to(m)
-    colormap.caption = 'ROI %'
+    # Set the plot limits to Dubai boundary
+    ax.set_xlim(neighborhoods.total_bounds[0], neighborhoods.total_bounds[2])
+    ax.set_ylim(neighborhoods.total_bounds[1], neighborhoods.total_bounds[3])
     
     # Display the map
-    st_folium = st.components.v1.html(m._repr_html_(), height=600)
+    st.pyplot(fig)
     
-    # Add a color scale legend
+    # Add a color scale legend below the map
     st.markdown("### ROI Color Scale")
     col1, col2, col3 = st.columns(3)
     with col1:
-        st.markdown(f"🔴 Low ROI: {min_roi:.1f}%")
+        st.markdown(f"🔴 Low ROI: {neighborhoods['avg_roi'].min():.1f}%")
     with col2:
-        st.markdown(f"🟡 Medium ROI: {((max_roi + min_roi)/2):.1f}%")
+        st.markdown(f"🟡 Medium ROI: {neighborhoods['avg_roi'].mean():.1f}%")
     with col3:
-        st.markdown(f"🟢 High ROI: {max_roi:.1f}%")
+        st.markdown(f"🟢 High ROI: {neighborhoods['avg_roi'].max():.1f}%")
 
 # ----- Tab 5: Investment Recommendations -----
 with tab5:
